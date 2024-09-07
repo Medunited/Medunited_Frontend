@@ -5,10 +5,10 @@ const Container = styled.div`
 	// background-color: ${color.primary_Color};
 	background-color: #eee;
 	height: 100vh;
-	display: flex;
-	text-align: center;
-	justify-content: center;
-	flex-direction: column;
+	// display: flex;
+	// text-align: center;
+	// justify-content: center;
+	// flex-direction: column;
 
 	& h1 {
 		font-size: 4rem;

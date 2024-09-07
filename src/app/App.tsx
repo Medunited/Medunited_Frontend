@@ -1,12 +1,9 @@
-import { Container } from "./AppStyle";
+import { Navigate } from "react-router-dom";
+import { Main } from "../pages";
 
 function App() {
-	return (
-		<Container>
-			<h1>MedUnited Website Coming Soon!!!</h1>
-			<p>Stay tuned!!</p>
-		</Container>
-	);
+	const user = "h";
+	return <>{user ? <Main /> : <Navigate to="/login" />}</>;
 }
 
 export default App;
