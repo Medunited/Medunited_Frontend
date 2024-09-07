@@ -3,7 +3,7 @@ import { Container } from "./AppStyle";
 function App() {
 	return (
 		<Container>
-			<h1>MedUnite Website Coming Soon!!!</h1>
+			<h1>MedUnited Website Coming Soon!!!</h1>
 			<p>Stay tuned!</p>
 		</Container>
 	);
