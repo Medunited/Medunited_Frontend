@@ -5,7 +5,7 @@ import * as MainStyles from "./MainStyles";
 const Main = () => {
 	return (
 		<MainStyles.MainWrapper>
-			<div className="d-flex flex-column h-100 justify-content-center align-items-center">
+			<div className="d-flex flex-column h-100 justify-content-center text-center align-items-center">
 				<h1 style={{ fontSize: "4rem" }}>Medunite Website Coming Soon!!</h1>
 				<p style={{ fontSize: "2rem" }}>Dashboard</p>
 				<Link to="/login">Login</Link>
