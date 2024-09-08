@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { LoginImg } from "../assets";
-import { bgColor, borderColor, textColor } from "../variables/Variables";
+import { bgColor, borderColor, fontSize, textColor } from "../variables/Variables";
 
 const SigninWrapper = styled.div`
 	width: 100vw;
@@ -35,7 +35,7 @@ const SigninContainer = styled.div`
 
 			& .forget-password {
 				text-align: right;
-				font-size: 1.3rem;
+				font-size: ${fontSize.font_size_medium};
 
 				& a {
 					text-decoration: none;
@@ -82,7 +82,7 @@ const SiginInputWrapper = styled.div`
 		border: 1px solid transparent;
 		color: inherit;
 		transition: all 0.2s;
-		font-size: 1.4rem;
+		font-size: ${fontSize.font_size_medium};
 
 		&:focus {
 			outline: 0;

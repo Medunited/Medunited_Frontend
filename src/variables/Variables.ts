@@ -17,3 +17,8 @@ export const bgColor = {
 export const borderColor = {
 	border_color: "rgba(132, 135, 146, .2)",
 };
+
+// Font Sizes
+export const fontSize = {
+	font_size_medium: "1.3rem",
+};
