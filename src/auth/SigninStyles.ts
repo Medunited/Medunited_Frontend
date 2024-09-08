@@ -30,6 +30,14 @@ const SigninContainer = styled.div`
 			margin: 3.5rem 0 0 0;
 		}
 	}
+
+	@media screen and (max-width: 900px) {
+		width: 70%;
+	}
+
+	@media screen and (max-width: 600px) {
+		width: 90%;
+	}
 `;
 
 const SiginInputWrapper = styled.div`
