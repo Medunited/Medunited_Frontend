@@ -2,7 +2,7 @@ import { FormEvent } from "react";
 import { BtnPrimary, HeadingPrimary } from "../components";
 import * as SigninStyle from "./SigninStyles";
 import { useLogin } from "../stateManagement";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Signin = () => {
 	const { loginData, setLogin } = useLogin();
@@ -36,10 +36,16 @@ const Signin = () => {
 								<label htmlFor="username">Username</label>
 								<input type="email" id="username" name="username" placeholder="Username" value={loginData.username} onChange={(e) => setLogin(e)} />
 							</SigninStyle.SiginInputWrapper>
+
 							<SigninStyle.SiginInputWrapper>
 								<label htmlFor="password">Password</label>
 								<input type="password" id="password" name="password" placeholder="Password" value={loginData.password} onChange={(e) => setLogin(e)} />
 							</SigninStyle.SiginInputWrapper>
+
+							<div style={{ textAlign: "right", fontSize: "1.3rem" }}>
+								<Link to="">Forget password</Link>
+							</div>
+
 							<SigninStyle.SiginBtnWrapper>
 								<BtnPrimary name="Login" paddingX="4rem" />
 							</SigninStyle.SiginBtnWrapper>

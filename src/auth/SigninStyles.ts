@@ -16,7 +16,7 @@ const SigninWrapper = styled.div`
 		align-items: center;
 		justify-content: center;
 		height: 100%;
-		background-color: ${bgColor.bg_color_light};
+		// background-color: ${bgColor.bg_color_light};
 	}
 `;
 
