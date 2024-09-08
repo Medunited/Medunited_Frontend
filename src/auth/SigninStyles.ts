@@ -32,6 +32,25 @@ const SigninContainer = styled.div`
 
 		& .login-details {
 			margin: 3.5rem 0 0 0;
+
+			& .forget-password {
+				text-align: right;
+				font-size: 1.3rem;
+
+				& a {
+					text-decoration: none;
+					color: ${textColor.text_primary_color};
+
+					&:hover {
+						color: #000;
+						text-decoration: underline;
+					}
+
+					&:active {
+						color: ${textColor.text_primary_color};
+					}
+				}
+			}
 		}
 	}
 

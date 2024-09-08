@@ -42,7 +42,7 @@ const Signin = () => {
 								<input type="password" id="password" name="password" placeholder="Password" value={loginData.password} onChange={(e) => setLogin(e)} />
 							</SigninStyle.SiginInputWrapper>
 
-							<div style={{ textAlign: "right", fontSize: "1.3rem" }}>
+							<div className="forget-password">
 								<Link to="">Forget password</Link>
 							</div>
 
