@@ -16,14 +16,14 @@ const SigninWrapper = styled.div`
 		align-items: center;
 		justify-content: center;
 		height: 100%;
-		// background-color: ${bgColor.bg_color_light};
+		background-color: ${bgColor.bg_color_light};
 	}
 `;
 
 const SigninContainer = styled.div`
 	width: 35%;
 	border-radius: 10px;
-	background-color: #fff;
+	background-color: ${textColor.text_white};
 	padding: 7rem 0;
 
 	& form {
@@ -40,9 +40,10 @@ const SigninContainer = styled.div`
 				& a {
 					text-decoration: none;
 					color: ${textColor.text_primary_color};
+					transition: all 0.2s;
 
 					&:hover {
-						color: #000;
+						color: ${textColor.text_dark};
 						text-decoration: underline;
 					}
 
