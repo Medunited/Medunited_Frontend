@@ -10,6 +10,7 @@ export const bgColor = {
 	btn_primary_color: "rgb(88, 92, 229)",
 	btn_primary_color_hover: "rgb(64, 70, 248)",
 	input_bg_color: "rgb(248,249,253)",
+	bg_color_light: "rgba(0, 0, 0, 0.6)",
 };
 
 // Border colors

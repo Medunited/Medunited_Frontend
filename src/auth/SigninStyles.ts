@@ -11,9 +11,13 @@ const SigninWrapper = styled.div`
 	background-position: center;
 	color: ${textColor.text_primary_color};
 
-	display: flex;
-	align-items: center;
-	justify-content: center;
+	& .loginWrapper {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		height: 100%;
+		background-color: ${bgColor.bg_color_light};
+	}
 `;
 
 const SigninContainer = styled.div`
@@ -30,6 +34,8 @@ const SigninContainer = styled.div`
 			margin: 3.5rem 0 0 0;
 		}
 	}
+
+	// Remove later
 
 	@media screen and (max-width: 900px) {
 		width: 70%;
