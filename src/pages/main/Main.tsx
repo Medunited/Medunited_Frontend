@@ -1,14 +1,20 @@
-import { Outlet } from "react-router-dom";
-import * as App from "../../app/AppStyle";
-import * as Component from "../../components";
+import { Link, Outlet } from "react-router-dom";
+import * as MainStyles from "./MainStyles";
+// import * as Container from "../../containers";
 
 const Main = () => {
 	return (
-		<App.Container>
-			<Component.NavBar />
+		<MainStyles.MainWrapper>
+			<div className="d-flex flex-column h-100 justify-content-center align-items-center">
+				<h1 style={{ fontSize: "4rem" }}>Medunite Website Coming Soon!</h1>
+				<p style={{ fontSize: "2rem" }}>Dashboard</p>
+				<Link to="/login">Login</Link>
+			</div>
 
-			<Outlet />
-		</App.Container>
+			{/* <Container.NavBar />
+
+			<Outlet /> */}
+		</MainStyles.MainWrapper>
 	);
 };
 

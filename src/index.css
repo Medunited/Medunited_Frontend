@@ -1,3 +1,8 @@
+:root {
+	/* Body background-color */
+	--body-bg: rgba(248, 249, 253);
+}
+
 * {
 	padding: 0;
 	margin: 0;
@@ -9,6 +14,9 @@ html {
 }
 
 body {
-	font-size: 1.6rem;
+	font-size: 1.5rem;
 	box-sizing: border-box;
+	font-family: "Poppins", sans-serif;
+	background-color: var(--body-bg);
+	/* color: rgb(64, 70, 248); */
 }
