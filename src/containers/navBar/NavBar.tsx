@@ -2,6 +2,8 @@ import { Link } from "react-router-dom";
 import * as NavStyle from "./NavBarStyle";
 import { Logo } from "../../components";
 import { navLink } from "./useNavBar";
+import { IoIosMenu } from "react-icons/io";
+import { bgColor } from "../../variables/Variables";
 
 const NavBar = () => {
 	return (
@@ -21,8 +23,11 @@ const NavBar = () => {
 			{/* </div> */}
 
 			<NavStyle.NavMenu>
-				<div className="">&nbsp;</div>
-				<div className="">icon</div>
+				<div className="icon-container">
+					<div className="icon">
+						<IoIosMenu color={bgColor.bg_white} size={18} />
+					</div>
+				</div>
 			</NavStyle.NavMenu>
 		</NavStyle.Nav>
 	);

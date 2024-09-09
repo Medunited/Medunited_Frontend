@@ -1,5 +1,6 @@
 import styled from "styled-components";
-import { bgColor, borderColor, fontSize, icon, textColor } from "../../variables/Variables";
+import { bgColor, borderColor, icon, textColor, transform } from "../../variables/Variables";
+import { NavMenuImg } from "../../assets";
 
 const Nav = styled.nav`
 	display: flex;
@@ -23,7 +24,7 @@ const NavListItems = styled.li`
 	align-items: center;
 	height: 100%;
 
-	// position: relative;s
+	// position: relative;
 
 	// &:before {
 	// 	content: "";
@@ -46,19 +47,15 @@ const NavListItems = styled.li`
 	& a {
 		display: block;
 		color: inherit;
-		// font-size: ${fontSize.font_size_small};
 		color: ${textColor.text_primary_light};
-		transform: scale(0.8);
-		transition: all 0.2s;
+		${transform.text_transform};
 
 		&:hover {
 			color: ${textColor.text_dark};
-			transform: scale(0.9);
 		}
 
 		&:active {
 			color: ${textColor.text_primary_light};
-			transform: scale(0.8);
 		}
 	}
 
@@ -70,6 +67,39 @@ const NavListItems = styled.li`
 	}
 `;
 
-const NavMenu = styled.div``;
+const NavMenu = styled.div`
+	background-image: url(${NavMenuImg});
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	border-radius: 5px;
+	height: 4rem;
+	width: 4rem;
+	cursor: pointer;
+	${transform.menu_transform};
+
+	position: relative;
+
+	& .icon-container {
+		background-color: ${bgColor.bg_color_light};
+		height: 100%;
+		width: 100%;
+		border-radius: inherit;
+
+		& .icon {
+			background-color: ${bgColor.bg_secondary_color};
+			border-radius: 100%;
+			height: 2.5rem;
+			width: 2.5rem;
+			position: absolute;
+			bottom: -0.5rem;
+			right: -1rem;
+
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+	}
+`;
 
 export { Nav, NavList, NavListItems, NavMenu };
