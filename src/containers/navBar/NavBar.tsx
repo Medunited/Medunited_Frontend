@@ -10,6 +10,7 @@ const NavBar = () => {
 		<NavStyle.Nav>
 			{/* <div className="d-flex"> */}
 			<Logo />
+
 			<NavStyle.NavList>
 				{navLink.map((param) => (
 					<NavStyle.NavListItems key={param.name}>

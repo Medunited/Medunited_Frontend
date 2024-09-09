@@ -1,12 +1,12 @@
 import styled from "styled-components";
-import { bgColor, borderColor, icon, textColor, transform } from "../../variables/Variables";
+import { bgColor, borderColor, icon, padding, textColor, transform } from "../../variables/Variables";
 import { NavMenuImg } from "../../assets";
 
 const Nav = styled.nav`
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	padding: 0rem 2rem 0rem 5rem;
+	padding: ${padding.nav_padding};
 	background-color: ${bgColor.bg_white};
 	border-bottom: 1px solid ${borderColor.border_color};
 `;

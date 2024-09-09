@@ -1,5 +1,11 @@
+import * as Container from "../../containers";
+
 const Dashboard = () => {
-	return <div>Dashboard</div>;
+	return (
+		<div>
+			<Container.DashboardHeader />
+		</div>
+	);
 };
 
 export default Dashboard;

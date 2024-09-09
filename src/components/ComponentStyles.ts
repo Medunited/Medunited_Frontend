@@ -1,10 +1,12 @@
 import styled from "styled-components";
-import { bgColor, textColor } from "../variables/Variables";
+import { bgColor, fontSize, textColor } from "../variables/Variables";
 
-const Heading = styled.h1``;
+const Heading = styled.h1`
+	font-size: ${fontSize.font_size_big};
+	font-weight: 600;
+`;
 
 const BtnPrimaryWrapper = styled.button`
-	border: none;
 	background-color: ${bgColor.bg_primary_color};
 	color: ${textColor.text_white};
 	border-radius: 30px;

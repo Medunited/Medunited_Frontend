@@ -25,6 +25,7 @@ export const borderColor = {
 
 // Font Sizes
 export const fontSize = {
+	font_size_big: "1.8rem",
 	font_size_medium: "1.4rem",
 	font_size_small: "1.2rem",
 };
@@ -34,6 +35,20 @@ export const icon = {
 	size: "2rem",
 };
 
+// Margin
+export const marginTop = {
+	big: "3rem",
+	medium: "2rem",
+	small: "1rem",
+};
+
+// Padding
+export const padding = {
+	nav_padding: `0rem 2rem 0rem 3.6rem`,
+	container_padding: `0rem 2rem 0rem 4rem`,
+};
+
+// Transforms
 export const transform = {
 	menu_transform: `
 	 	transform: scale(0.9);

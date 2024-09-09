@@ -1,5 +1,5 @@
 import { FormEvent } from "react";
-import { BtnPrimary, HeadingPrimary } from "../components";
+import { BtnPrimary } from "../components";
 import * as SigninStyle from "./SigninStyles";
 import { useLogin } from "../stateManagement";
 import { Link, useNavigate } from "react-router-dom";
@@ -30,7 +30,7 @@ const Signin = () => {
 			<div className="loginWrapper">
 				<SigninStyle.SigninContainer>
 					<form onSubmit={handleSubmit}>
-						<HeadingPrimary text="Login to your Account" />
+						<h1>Login to your Account</h1>
 
 						<div className="login-details">
 							<SigninStyle.SiginInputWrapper>
