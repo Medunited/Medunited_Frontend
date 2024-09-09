@@ -1,5 +1,6 @@
 import { ChangeEvent } from "react";
 import { create } from "zustand";
+
 type LoginInfo = {
 	username: string;
 	password: string;

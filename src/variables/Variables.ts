@@ -8,10 +8,13 @@ export const textColor = {
 
 // Background Colors
 export const bgColor = {
-	btn_primary_color: "rgb(88, 92, 229)",
-	btn_primary_color_hover: "rgb(64, 70, 248)",
+	bg_primary_color: "rgb(88, 92, 229)",
+	bg_primary_color_hover: "rgb(64, 70, 248)",
 	input_bg_color: "rgb(248,249,253)",
 	bg_color_light: "rgba(0, 0, 0, 0.4)",
+
+	bg_white: "#fff",
+	bg_dark: "#000",
 };
 
 // Border colors
@@ -21,5 +24,11 @@ export const borderColor = {
 
 // Font Sizes
 export const fontSize = {
-	font_size_medium: "1.3rem",
+	font_size_medium: "1.4rem",
+	font_size_small: "1.2rem",
+};
+
+// Icon Sizes
+export const icon = {
+	size: "2rem",
 };

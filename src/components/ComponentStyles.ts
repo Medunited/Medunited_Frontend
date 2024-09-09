@@ -5,17 +5,17 @@ const Heading = styled.h1``;
 
 const BtnPrimaryWrapper = styled.button`
 	border: none;
-	background-color: ${bgColor.btn_primary_color};
+	background-color: ${bgColor.bg_primary_color};
 	color: ${textColor.text_white};
 	border-radius: 30px;
 	transition: all 0.2s;
 
 	&:hover {
-		background-color: ${bgColor.btn_primary_color_hover};
+		background-color: ${bgColor.bg_primary_color_hover};
 	}
 
 	&:active {
-		background-color: ${bgColor.btn_primary_color};
+		background-color: ${bgColor.bg_primary_color};
 	}
 `;
 

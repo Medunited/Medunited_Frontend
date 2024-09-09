@@ -31,14 +31,17 @@ const Signin = () => {
 				<SigninStyle.SigninContainer>
 					<form onSubmit={handleSubmit}>
 						<HeadingPrimary text="Login to your Account" />
+
 						<div className="login-details">
 							<SigninStyle.SiginInputWrapper>
 								<label htmlFor="username">Username</label>
+
 								<input type="email" id="username" name="username" placeholder="Username" value={loginData.username} onChange={(e) => setLogin(e)} />
 							</SigninStyle.SiginInputWrapper>
 
 							<SigninStyle.SiginInputWrapper>
 								<label htmlFor="password">Password</label>
+
 								<input type="password" id="password" name="password" placeholder="Password" value={loginData.password} onChange={(e) => setLogin(e)} />
 							</SigninStyle.SiginInputWrapper>
 
