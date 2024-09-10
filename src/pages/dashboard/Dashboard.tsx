@@ -1,9 +1,16 @@
-import * as Container from "../../containers";
+import * as Con from "../../containers";
+
+import { Container } from "../../components";
 
 const Dashboard = () => {
 	return (
 		<div>
-			<Container.DashboardHeader />
+			<Con.DashboardHeader />
+			<Container>
+				<main className="main">
+					<Con.DashboardOverview />
+				</main>
+			</Container>
 		</div>
 	);
 };

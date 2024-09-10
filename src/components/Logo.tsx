@@ -7,7 +7,7 @@ const Logo = () => {
 		<div>
 			<Link to="">
 				<img src={LogoImg} alt="Logo" style={{ width: "50px" }} />
-				<span style={{ fontSize: "2rem", fontWeight: "600", fontFamily: "monospace", color: textColor.text_primary_color }}>Medunite</span>
+				<span style={{ fontSize: "2rem", fontWeight: "600", fontFamily: "monospace", color: textColor.text_primary_color }}>HospitalBridge</span>
 			</Link>
 		</div>
 	);

@@ -10,12 +10,17 @@ export const textColor = {
 export const bgColor = {
 	bg_primary_color: "rgb(88, 92, 229)",
 	bg_secondary_color: "rgb(30,196,245)",
+	bg_secondary_color_light: "rgb(26, 161, 202)",
 	bg_primary_color_hover: "rgb(64, 70, 248)",
 	input_bg_color: "rgb(248,249,253)",
 	bg_color_light: "rgba(0, 0, 0, 0.3)",
 
 	bg_white: "#fff",
 	bg_dark: "#000",
+
+	bg_green: "rgb(45, 204, 112)",
+	bg_yellow_dark: "rgb(244,193,24)",
+	bg_red_dark: "rgb(252,96,81)",
 };
 
 // Border colors
@@ -43,10 +48,7 @@ export const marginTop = {
 };
 
 // Padding
-export const padding = {
-	nav_padding: `0rem 2rem 0rem 3.6rem`,
-	container_padding: `0rem 2rem 0rem 4rem`,
-};
+export const padding = {};
 
 // Transforms
 export const transform = {

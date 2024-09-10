@@ -1,8 +1,7 @@
 import styled from "styled-components";
-import { bgColor, fontSize, marginTop, padding, textColor } from "../../variables/Variables";
+import { bgColor, fontSize, marginTop, textColor } from "../../variables/Variables";
 
 const DashboardHeaderContainer = styled.div`
-	padding: ${padding.container_padding};
 	margin-top: ${marginTop.medium};
 
 	border-left: 10px solid ${bgColor.bg_primary_color};
@@ -11,7 +10,7 @@ const DashboardHeaderContainer = styled.div`
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
-		padding: 0.3rem 0;
+		padding: 0.7rem 0;
 	}
 `;
 
@@ -26,9 +25,27 @@ const Button = styled.button`
 	display: flex;
 	align-items: center;
 
+	&:hover {
+		background-color: ${bgColor.bg_secondary_color_light};
+	}
+
+	&:active {
+		background-color: ${bgColor.bg_secondary_color};
+	}
+
 	& .time-text {
 		margin: 0 1rem 0 0;
 	}
 `;
 
-export { DashboardHeaderContainer, Button };
+const DashboardOverviewWrapper = styled.section`
+	display: flex;
+	// justify-content: space-between;
+	margin-top: ${marginTop.big};
+
+	& .overview:not(:last-child) {
+		margin: 0 3rem 0 0;
+	}
+`;
+
+export { DashboardHeaderContainer, Button, DashboardOverviewWrapper };

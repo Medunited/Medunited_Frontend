@@ -1,12 +1,12 @@
 import styled from "styled-components";
-import { bgColor, borderColor, icon, padding, textColor, transform } from "../../variables/Variables";
+import { bgColor, borderColor, icon, textColor, transform } from "../../variables/Variables";
 import { NavMenuImg } from "../../assets";
 
 const Nav = styled.nav`
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	padding: ${padding.nav_padding};
+	padding: 1rem 2rem 1rem 3.6rem;
 	background-color: ${bgColor.bg_white};
 	border-bottom: 1px solid ${borderColor.border_color};
 `;
@@ -79,6 +79,22 @@ const NavMenu = styled.div`
 	${transform.menu_transform};
 
 	position: relative;
+
+	&:hover {
+		& .icon-container {
+			& .icon {
+				background-color: ${bgColor.bg_secondary_color_light};
+			}
+		}
+	}
+
+	&:active {
+		& .icon-container {
+			& .icon {
+				background-color: ${bgColor.bg_secondary_color};
+			}
+		}
+	}
 
 	& .icon-container {
 		background-color: ${bgColor.bg_color_light};
