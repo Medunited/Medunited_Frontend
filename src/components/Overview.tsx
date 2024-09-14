@@ -12,6 +12,7 @@ const Overview = (params: Props) => {
 	return (
 		<OverviewWrapper>
 			<div className="overview-text">{params.text}</div>
+
 			<div className="overview-container">
 				<div className="overview-icon" style={{ backgroundColor: params.bgColor }}>
 					{params.icon}

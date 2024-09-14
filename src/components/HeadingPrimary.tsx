@@ -1,11 +1,12 @@
+import { ReactNode } from "react";
 import { Heading } from "./ComponentStyles";
 
 interface HeadingProps {
-	text: string;
+	children: ReactNode;
 }
 
 const HeadingPrimary = (params: HeadingProps) => {
-	return <Heading>{params.text}</Heading>;
+	return <Heading>{params.children}</Heading>;
 };
 
 export default HeadingPrimary;

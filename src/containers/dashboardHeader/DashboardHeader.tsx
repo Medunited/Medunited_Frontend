@@ -8,7 +8,7 @@ const DashboardHeader = () => {
 		<DashboardHeaderContainer>
 			<Container>
 				<div className="wrapper">
-					<HeadingPrimary text="Dashboard" />
+					<HeadingPrimary>Dashboard</HeadingPrimary>
 
 					<Button>
 						<span className="time-text">This Week</span>
