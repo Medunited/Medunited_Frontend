@@ -159,7 +159,7 @@ const AppointmentSection = styled.section`
 			border-radius: ${borderRadius};
 
 			& .new-patient-container {
-				padding: 2.5rem 3rem 2rem 3rem;
+				padding: 3.2rem 3rem;
 				color: ${textColor.text_white};
 				background-color: ${bgColor.bg_secondary_color};
 				border-radius: ${borderRadius};
