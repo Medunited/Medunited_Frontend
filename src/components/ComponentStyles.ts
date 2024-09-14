@@ -4,6 +4,10 @@ import { bgColor, fontSize, marginTop, textColor } from "../variables/Variables"
 const Wrapper = styled.div`
 	width: 90%;
 	margin: 0 auto;
+
+	@media screen and (min-width: 2000px) {
+		width: 80%;
+	}
 `;
 
 const Heading = styled.h1`

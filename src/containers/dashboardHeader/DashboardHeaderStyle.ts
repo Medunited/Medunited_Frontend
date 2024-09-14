@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { bgColor, borderRadius, fontSize, marginTop, textColor } from "../../variables/Variables";
+import { bgColor, borderRadius, fontSize, marginTop, textColor, transform } from "../../variables/Variables";
 
 const DashboardHeaderContainer = styled.div`
 	margin-top: ${marginTop.medium};
@@ -110,9 +110,14 @@ const AppointmentSection = styled.section`
 						margin: ${marginTop.big} 0 0 0;
 					}
 
-					& .patients-visit-type {
-						margin: 0 0rem 0 5rem;
-						font-size: ${fontSize.font_size_medium_1};
+					&_2 {
+						display: flex;
+						align-items: baseline;
+						margin: 0 0 0 5rem;
+
+						& .patients-visit-type {
+							font-size: ${fontSize.font_size_medium_1};
+						}
 					}
 
 					& .icon {
@@ -150,6 +155,111 @@ const AppointmentSection = styled.section`
 	}
 
 	& .section_2 {
+		& .add-new-patient {
+			border-radius: ${borderRadius};
+
+			& .new-patient-container {
+				padding: 2.5rem 3rem 2rem 3rem;
+				color: ${textColor.text_white};
+				background-color: ${bgColor.bg_secondary_color};
+				border-radius: ${borderRadius};
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+			}
+		}
+
+		& .today-appointments {
+			margin: ${marginTop.small} 0 0 0;
+			border-radius: ${borderRadius};
+			padding: 2.5rem 3rem 2rem 3rem;
+			background-color: ${bgColor.bg_white};
+
+			&_header {
+				display: flex;
+				align-items: baseline;
+				justify-content: space-between;
+
+				& .see-all {
+					font-size: ${fontSize.font_size_big};
+					color: ${textColor.text_secondary_color};
+					font-weight: 600;
+					${transform};
+
+					&:hover {
+						color: ${textColor.text_secondary_color_light};
+					}
+
+					&:active {
+						color: ${textColor.text_secondary_color};
+					}
+				}
+			}
+
+			&_patients {
+				margin: ${marginTop.big} 0 0 0;
+
+				&-details {
+					display: flex;
+					align-items: center;
+					justify-content: space-between;
+
+					&:not(:first-child) {
+						margin: ${marginTop.medium} 0 0 0;
+					}
+
+					& .patients-details-container {
+						display: flex;
+						align-items: center;
+
+						& .patient-icon {
+							margin: 0 2.5rem 0 0;
+							height: 5rem;
+							width: 5rem;
+							border-radius: ${borderRadius};
+							background-color: ${textColor.text_primary_light};
+							font-size: 2rem;
+							color: ${textColor.text_white};
+
+							display: flex;
+							align-items: center;
+							justify-content: center;
+
+							& svg {
+								width: 2.5rem;
+								height: 2.5rem;
+							}
+						}
+
+						& .patient-details {
+							& .patient-name {
+								font-size: ${fontSize.font_size_medium_1};
+								font-weight: 550;
+							}
+
+							& .patient-scheduled-doctor {
+								& .with {
+									font-size: ${fontSize.font_size_small};
+									margin: 0 0.5rem 0 0;
+									color: ${textColor.text_primary_light};
+								}
+
+								& .doctor-name {
+									color: ${textColor.text_secondary_color};
+									font-weight: 500;
+									font-size: ${fontSize.font_size_medium};
+								}
+							}
+						}
+					}
+
+					& .appointment-time {
+						font-weight: 550;
+						font-size: ${fontSize.font_size_medium};
+					}
+				}
+			}
+		}
 	}
 `;
 

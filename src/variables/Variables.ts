@@ -4,6 +4,8 @@ export const textColor = {
 	text_primary_light: "rgb(132, 135, 146)",
 	text_white: "#fff",
 	text_dark: "#000",
+	text_secondary_color: "rgb(30,196,245)",
+	text_secondary_color_light: "rgb(26, 161, 202)",
 };
 
 // Background Colors
