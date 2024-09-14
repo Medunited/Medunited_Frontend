@@ -46,8 +46,8 @@ export const icon = {
 // Margin
 export const marginTop = {
 	big: "3rem",
-	medium: "2rem",
-	small: "1rem",
+	medium: "2.5rem",
+	small: "1.5rem",
 };
 
 // Padding
