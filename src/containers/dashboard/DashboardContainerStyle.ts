@@ -325,7 +325,7 @@ const PatientReviewContainer = styled.section`
 			}
 
 			& .review-question {
-				font-weight: 550;
+				font-weight: 500;
 			}
 
 			& .review-progress-summary {
