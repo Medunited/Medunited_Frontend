@@ -5,3 +5,4 @@ export { default as PatientChartOverview } from "./dashboard/PatientChartOvervie
 export { default as PatientAppointment } from "./dashboard/PatientAppointment";
 export { default as AddPatient } from "./dashboard/AddPatient";
 export { default as TodayAppointment } from "./dashboard/TodayAppointment";
+export { default as PatientReviews } from "./dashboard/PatientReviews";

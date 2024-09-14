@@ -27,7 +27,7 @@ const TodayAppointment = () => {
 
 			<div className="today-appointments_patients">
 				{todaysFirstFivePatients.map((patient) => (
-					<div className="today-appointments_patients-details">
+					<div key={patient.time} className="today-appointments_patients-details">
 						<div key={patient.time} className="patients-details-container">
 							<div className="patient-icon">
 								<IoPersonAddSharp />

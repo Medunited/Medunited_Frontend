@@ -5,7 +5,7 @@ import { AppointmentSection } from "./DashboardStyles";
 
 const Dashboard = () => {
 	return (
-		<div>
+		<div style={{ padding: "0 0 5rem 0" }}>
 			<Con.DashboardHeader />
 
 			<Container>
@@ -21,6 +21,9 @@ const Dashboard = () => {
 
 							{/* Breakdown of how the patients booked appointments */}
 							<Con.PatientAppointment />
+
+							{/* Reviews */}
+							<Con.PatientReviews />
 						</div>
 
 						<div className="section_2 col">

@@ -36,7 +36,7 @@ export const borderColor = {
 export const fontSize = {
 	font_size_big: "1.8rem",
 	font_size_medium: "1.4rem",
-	font_size_medium_1: "1.65rem",
+	font_size_medium_1: "1.55rem",
 	font_size_small: "1.2rem",
 };
 

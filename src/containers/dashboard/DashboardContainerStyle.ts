@@ -172,16 +172,12 @@ const TodayAppointmentContainer = styled.section`
 
 		& .see-all {
 			font-size: ${fontSize.font_size_big};
-			color: ${textColor.text_secondary_color};
-			font-weight: 600;
+			color: ${textColor.text_secondary_color_light};
+			font-weight: 500;
 			${transform};
 
-			&:hover {
-				color: ${textColor.text_secondary_color_light};
-			}
-
 			&:active {
-				color: ${textColor.text_secondary_color};
+				color: ${textColor.text_secondary_color_light};
 			}
 		}
 	}
@@ -259,4 +255,152 @@ const TodayAppointmentContainer = styled.section`
 	}
 `;
 
-export { DashboardHeaderContainer, Button, DashboardOverviewWrapper, AddNewPatientContainer, PatientAppointmentContainer, PatientChartOverviewContainer, TodayAppointmentContainer };
+const PatientReviewContainer = styled.section`
+	padding: 2.5rem 3rem 2rem 3rem;
+	background-color: ${bgColor.bg_white};
+	border-radius: ${borderRadius};
+	margin: ${marginTop.small} 0 0 0;
+
+	& .review-heading {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+
+		& .review-container {
+			display: flex;
+			align-items: center;
+
+			& .total-reviews {
+				margin: 0 0 0 3rem;
+				color: ${textColor.text_primary_light};
+			}
+		}
+
+		& .review-emoji {
+			display: flex;
+			align-items: center;
+
+			& .emoji {
+				border-radius: 100%;
+				cursor: pointer;
+				${transform};
+
+				position: relative;
+
+				& span {
+					font-size: 2.5rem;
+				}
+
+				& .emoji-meaning {
+					display: none;
+					position: absolute;
+					top: -45px;
+					left: -10px;
+					color: ${textColor.text_white};
+					background-color: ${bgColor.bg_dark};
+					padding: 0.7rem 1.5rem;
+					border-radius: 5px;
+					font-size: ${fontSize.font_size_medium_1};
+				}
+
+				&:hover {
+					& .emoji-meaning {
+						display: block;
+					}
+				}
+
+				&:not(:last-child) {
+					margin: 0 2rem 0 0;
+				}
+			}
+		}
+	}
+
+	& .review-questions-container {
+		margin: ${marginTop.big} 0 0 0;
+
+		& .review-feedbacks {
+			&:not(:first-child) {
+				margin: ${marginTop.medium} 0 0 0;
+			}
+
+			& .review-question {
+				font-weight: 550;
+			}
+
+			& .review-progress-summary {
+				margin: ${marginTop.small} 0 0 0;
+
+				& .progress-bar_container {
+					height: 1.4rem;
+					border-radius: 0;
+
+					display: flex;
+
+					& .progress-bar-wrapper {
+						position: relative;
+						text-align: center;
+						cursor: pointer;
+
+						& .review-details {
+							display: none;
+							position: absolute;
+							top: -40px;
+							left: 30%;
+
+							& .emoji-container {
+								display: flex;
+								background-color: ${bgColor.bg_dark};
+								color: ${textColor.text_white};
+								padding: 0.5rem 0.7rem;
+								border-radius: 5px;
+
+								& .emoji {
+									margin: 0 0.5rem 0 0;
+								}
+							}
+
+							& .arrow {
+								margin: -10px 0 0 0;
+								text-align: center;
+
+								& svg {
+									fill: ${bgColor.bg_dark};
+								}
+							}
+						}
+
+						&:hover {
+							& .review-details {
+								display: block;
+							}
+						}
+					}
+
+					& .progress-bars {
+						height: 100%;
+						cursor: pointer;
+						position: relative;
+					}
+				}
+			}
+		}
+	}
+
+	& .btn-see-all-reviews {
+		text-align: right;
+		margin: ${marginTop.medium} 0 0 0;
+
+		& button {
+			color: ${textColor.text_secondary_color_light};
+			font-weight: 500;
+			${transform};
+
+			&:active {
+				color: ${textColor.text_secondary_color_light};
+			}
+		}
+	}
+`;
+
+export { DashboardHeaderContainer, Button, DashboardOverviewWrapper, AddNewPatientContainer, PatientAppointmentContainer, PatientChartOverviewContainer, TodayAppointmentContainer, PatientReviewContainer };

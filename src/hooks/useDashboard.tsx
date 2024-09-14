@@ -35,4 +35,17 @@ const todayPatients = [
 	{ firstName: "Samantha", lastName: "Smith", time: "12:00 pm", doctor: "Dr. Joseph Williamson" },
 ];
 
-export { overviewDetails, navlistItems, patientAppointment, todayPatients };
+const reviewEmojis = [
+	{ id: 4, name: "Excellent", code: "😍", bgColor: bgColor.bg_green },
+	{ id: 3, name: "Good", code: "😁", bgColor: bgColor.bg_yellow_dark },
+	{ id: 2, name: "OK", code: "😐", bgColor: bgColor.bg_secondary_color },
+	{ id: 1, name: "Poor", code: "😢", bgColor: bgColor.bg_red_dark },
+];
+
+const reviewQuestions = [
+	{ id: 1, question: "How was the treatment at our hospital?", excelletPercent: "20%", goodPercent: "30%", OK: "40%", poorPercent: "10%" },
+	{ id: 2, question: "How was the cleaniless at our hospital?", excelletPercent: "10%", goodPercent: "40%", OK: "40%", poorPercent: "10%" },
+	{ id: 3, question: "How was the hospital staff behaviour?", excelletPercent: "30%", goodPercent: "30%", OK: "30%", poorPercent: "10%" },
+];
+
+export { overviewDetails, navlistItems, patientAppointment, todayPatients, reviewEmojis, reviewQuestions };
