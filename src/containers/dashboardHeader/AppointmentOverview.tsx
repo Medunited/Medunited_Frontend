@@ -7,6 +7,18 @@ import * as useDashboard from "./useDashboard";
 const AppointmentOverview = () => {
 	const [num, setNum] = useState(0);
 
+	// const [patientListPage, setPatientListPage] = useState({
+	// 	start: 0,
+	// 	end: 6,
+	// });
+
+	const todaysFirstFivePatients = useDashboard.todayPatients.slice(0, 6);
+	// const todaysFirstFivePatients = useDashboard.todayPatients.slice(patientListPage.start, patientListPage.end);
+
+	// const nextPage = (start: number) => {
+	// 	setPatientListPage({ start: start, end: useDashboard.todayPatients.length });
+	// };
+
 	return (
 		<AppointmentSection>
 			{/* Patients, Appointments and Earning Section */}
@@ -69,16 +81,18 @@ const AppointmentOverview = () => {
 				<div className="today-appointments">
 					<div className="today-appointments_header">
 						<HeadingPrimary>Today's Appointments</HeadingPrimary>
+
 						<button className="see-all">See all</button>
 					</div>
 
 					<div className="today-appointments_patients">
-						{useDashboard.todayPatients.map((patient) => (
+						{todaysFirstFivePatients.map((patient) => (
 							<div className="today-appointments_patients-details">
 								<div key={patient.time} className="patients-details-container">
 									<div className="patient-icon">
 										<IoPersonAddSharp />
 									</div>
+
 									<div className="patient-details">
 										<h2 className="patient-name">{patient.firstName + " " + patient.lastName}</h2>
 
