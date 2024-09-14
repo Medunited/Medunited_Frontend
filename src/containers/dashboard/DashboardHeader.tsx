@@ -1,7 +1,7 @@
 import { MdArrowDropDown } from "react-icons/md";
 import { Container, HeadingPrimary } from "../../components";
 import { textColor } from "../../variables/Variables";
-import { Button, DashboardHeaderContainer } from "./DashboardHeaderStyle";
+import { Button, DashboardHeaderContainer } from "./DashboardContainerStyle";
 
 const DashboardHeader = () => {
 	return (
