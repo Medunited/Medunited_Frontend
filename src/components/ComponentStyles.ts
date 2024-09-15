@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { bgColor, fontSize, marginTop, textColor } from "../variables/Variables";
+import { bgColor, borderColor, fontSize, marginTop, textColor } from "../variables/Variables";
 
 const Wrapper = styled.div`
 	width: 90%;
@@ -34,6 +34,7 @@ const OverviewWrapper = styled.div`
 	background-color: ${textColor.text_white};
 	border-radius: 20px;
 	padding: 1.5rem 0rem 1.5rem 2.5rem;
+	border: 1px solid ${borderColor.border_color};
 
 	& .overview-text {
 		color: ${textColor.text_primary_light};

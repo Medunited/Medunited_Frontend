@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { bgColor, borderRadius, fontSize, marginTop, textColor, transform } from "../../variables/Variables";
+import { bgColor, borderColor, borderRadius, fontSize, marginTop, textColor, transform } from "../../variables/Variables";
 
 const DashboardHeaderContainer = styled.div`
 	margin-top: ${marginTop.medium};
@@ -49,6 +49,7 @@ const DashboardOverviewWrapper = styled.section`
 
 const AddNewPatientContainer = styled.section`
 	border-radius: ${borderRadius};
+	border: 1px solid ${borderColor.border_color};
 
 	& .new-patient-container {
 		padding: 3.2rem 3rem;
@@ -66,6 +67,7 @@ const PatientAppointmentContainer = styled.section`
 	border-radius: ${borderRadius};
 	padding: 2.5rem 3rem 2rem 3rem;
 	margin: ${marginTop.small} 0 0 0;
+	border: 1px solid ${borderColor.border_color};
 
 	& .patient-appointment-details {
 		display: flex;
@@ -127,6 +129,7 @@ const PatientChartOverviewContainer = styled.section`
 	border-radius: ${borderRadius};
 	padding: 2.5rem 3rem 2rem 3rem;
 	background-color: ${bgColor.bg_white};
+	border: 1px solid ${borderColor.border_color};
 
 	//  Change later
 
@@ -165,6 +168,7 @@ const TodayAppointmentContainer = styled.section`
 	background-color: ${bgColor.bg_white};
 	overflow: hidden;
 	padding-bottom: 0.5rem;
+	border: 1px solid ${borderColor.border_color};
 
 	& .today-appointments_header {
 		display: flex;
@@ -262,6 +266,7 @@ const PatientReviewContainer = styled.section`
 	background-color: ${bgColor.bg_white};
 	border-radius: ${borderRadius};
 	margin: ${marginTop.small} 0 0 0;
+	border: 1px solid ${borderColor.border_color};
 
 	& .review-heading {
 		display: flex;
@@ -418,6 +423,7 @@ const DoctorAvailabilityContainer = styled.section`
 	margin: ${marginTop.small} 0 0 0;
 	border-radius: ${borderRadius};
 	padding-bottom: 1rem;
+	border: 1px solid ${borderColor.border_color};
 
 	& .doctor-availability_header {
 		display: flex;
