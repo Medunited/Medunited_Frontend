@@ -6,6 +6,10 @@ export const textColor = {
 	text_dark: "#000",
 	text_secondary_color: "rgb(30,196,245)",
 	text_secondary_color_light: "rgb(26, 161, 202)",
+
+	text_green: "rgb(45, 204, 112)",
+	text_yellow_dark: "rgb(244,193,24)",
+	text_red_dark: "rgb(252,96,81)",
 };
 
 // Background Colors

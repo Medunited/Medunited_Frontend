@@ -1,7 +1,7 @@
 import { HeadingPrimary } from "../../components";
 import { doctors } from "../../hooks/useDashboard";
 import { DoctorAvailabilityContainer } from "./DashboardContainerStyle";
-import { bgColor, textColor } from "../../variables/Variables";
+import { textColor } from "../../variables/Variables";
 import { FaUserDoctor } from "react-icons/fa6";
 
 const DoctorAvaliability = () => {
@@ -30,7 +30,7 @@ const DoctorAvaliability = () => {
 							</div>
 						</div>
 
-						<div className="doctor-availability" style={{ color: doctor.availability === "Available" ? bgColor.bg_green : doctor.availability === "Not available" ? textColor.text_primary_light : bgColor.bg_yellow_dark }}>
+						<div className="doctor-availability" style={{ color: doctor.availability === "Available" ? textColor.text_green : doctor.availability === "Not available" ? textColor.text_primary_light : textColor.text_yellow_dark }}>
 							{doctor.availability}
 						</div>
 					</div>
