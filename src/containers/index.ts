@@ -6,3 +6,4 @@ export { default as PatientAppointment } from "./dashboard/PatientAppointment";
 export { default as AddPatient } from "./dashboard/AddPatient";
 export { default as TodayAppointment } from "./dashboard/TodayAppointment";
 export { default as PatientReviews } from "./dashboard/PatientReviews";
+export { default as DoctorAvaliabilty } from "./dashboard/DoctorAvaliability";

@@ -163,6 +163,8 @@ const TodayAppointmentContainer = styled.section`
 	margin: ${marginTop.small} 0 0 0;
 	border-radius: ${borderRadius};
 	background-color: ${bgColor.bg_white};
+	overflow: hidden;
+	padding-bottom: 0.5rem;
 
 	& .today-appointments_header {
 		display: flex;
@@ -403,4 +405,92 @@ const PatientReviewContainer = styled.section`
 	}
 `;
 
-export { DashboardHeaderContainer, Button, DashboardOverviewWrapper, AddNewPatientContainer, PatientAppointmentContainer, PatientChartOverviewContainer, TodayAppointmentContainer, PatientReviewContainer };
+const DoctorAvailabilityContainer = styled.section`
+	background-color: ${bgColor.bg_white};
+	margin: ${marginTop.small} 0 0 0;
+	border-radius: ${borderRadius};
+	padding-bottom: 1rem;
+
+	& .doctor-availability_header {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 2.5rem 3rem 0rem 3rem;
+
+		& .see-all {
+			font-size: ${fontSize.font_size_big};
+			color: ${textColor.text_secondary_color_light};
+			font-weight: 500;
+			${transform};
+
+			&:active {
+				color: ${textColor.text_secondary_color_light};
+			}
+		}
+	}
+
+	& .doctors-list {
+		margin: ${marginTop.small} 0 0 0;
+
+		& .doctor-availability-details {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			padding: 1.5rem 3rem 1.5rem 3rem;
+			margin: 0;
+			cursor: pointer;
+
+			&:hover {
+				background-color: ${bgColor.bg_secondary_color_hover};
+			}
+
+			&:active {
+				background-color: ${bgColor.bg_secondary_color_active};
+			}
+
+			& .doctor-details-container {
+				display: flex;
+
+				& .doctor-icon {
+					margin: 0 2.5rem 0 0;
+					height: 5rem;
+					width: 5rem;
+					border-radius: 10px;
+					background-color: ${textColor.text_primary_light};
+					font-size: 2rem;
+					color: ${textColor.text_white};
+
+					display: flex;
+					align-items: center;
+					justify-content: center;
+
+					& svg {
+						width: 2.6rem;
+						height: 2.6rem;
+					}
+				}
+
+				& .doctor-details {
+					& .doctor-name {
+						font-size: ${fontSize.font_size_medium_1};
+						font-weight: 550;
+					}
+
+					& .doctor-profession {
+						color: ${textColor.text_primary_light};
+						font-weight: 500;
+						font-size: ${fontSize.font_size_medium};
+						margin: 1rem 0 0 0;
+					}
+				}
+			}
+
+			& .doctor-availability {
+				font-weight: 550;
+				font-size: ${fontSize.font_size_medium};
+			}
+		}
+	}
+`;
+
+export { DashboardHeaderContainer, Button, DashboardOverviewWrapper, AddNewPatientContainer, PatientAppointmentContainer, PatientChartOverviewContainer, TodayAppointmentContainer, PatientReviewContainer, DoctorAvailabilityContainer };

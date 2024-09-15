@@ -32,6 +32,9 @@ const Dashboard = () => {
 
 							{/* Today's Appointment section */}
 							<Con.TodayAppointment />
+
+							{/* Doctor's Avaliablity */}
+							<Con.DoctorAvaliabilty />
 						</div>
 					</AppointmentSection>
 				</main>
