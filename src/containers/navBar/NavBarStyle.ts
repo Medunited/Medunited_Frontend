@@ -6,7 +6,6 @@ const Nav = styled.nav`
 	padding: 1rem 0rem 1rem 0rem;
 	background-color: ${bgColor.bg_white};
 	border-bottom: 1px solid ${borderColor.border_color};
-	min-width: 1200px;
 
 	& .wrapper {
 		display: flex;

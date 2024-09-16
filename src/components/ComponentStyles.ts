@@ -2,16 +2,20 @@ import styled from "styled-components";
 import { bgColor, borderColor, fontSize, marginTop, textColor } from "../variables/Variables";
 
 const Wrapper = styled.div`
-	width: 1100px;
+	width: 1120px;
 	margin: 0 auto;
 
 	@media screen and (min-width: 2100px) {
+		// width: 1200px;
+	}
+
+	@media screen and (min-width: 3100px) {
 		// width: 60%;
 	}
 
-	@media screen and (max-width: 1290px) {
-		width: 1200px;
-	}
+	// @media screen and (max-width: 1290px) {
+	// 	width: 1200px;
+	// }
 `;
 
 const Heading = styled.h1`
