@@ -7,7 +7,7 @@ const DashboardOverview = () => {
 		<DashboardOverviewWrapper>
 			{overviewDetails.map((items) => (
 				<div className="col overview" key={items.text}>
-					<Overview text={items.text} icon={items.icon} count={items.count} bgColor={items.bgColor} />
+					<Overview text={items.text} icon={items.icon} count={items.count} bgColor={items.bgColor} page={items.page} />
 				</div>
 			))}
 		</DashboardOverviewWrapper>

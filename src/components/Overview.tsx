@@ -1,16 +1,20 @@
 import { ReactNode } from "react";
 import { OverviewWrapper } from "./ComponentStyles";
+import { useNavigate } from "react-router-dom";
 
 interface Props {
 	text: string;
 	icon: ReactNode;
 	count: number | string; //change to number
 	bgColor: string;
+	page: string;
 }
 
 const Overview = (params: Props) => {
+	const navigate = useNavigate();
+
 	return (
-		<OverviewWrapper>
+		<OverviewWrapper onClick={() => navigate(params.page)}>
 			<div className="overview-text">{params.text}</div>
 
 			<div className="overview-container">

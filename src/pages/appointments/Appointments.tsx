@@ -1,5 +1,11 @@
+import { MainNavBar } from "../../containers";
+
 const Appointments = () => {
-	return <div>Appointments</div>;
+	return (
+		<div>
+			<MainNavBar />
+		</div>
+	);
 };
 
 export default Appointments;

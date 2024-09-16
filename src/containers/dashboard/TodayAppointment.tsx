@@ -2,8 +2,10 @@ import { IoPersonAddSharp } from "react-icons/io5";
 import { HeadingPrimary } from "../../components";
 import { todayPatients } from "../../hooks/useDashboard";
 import { TodayAppointmentContainer } from "./DashboardContainerStyle";
+import { useNavigate } from "react-router-dom";
 
 const TodayAppointment = () => {
+	const navigate = useNavigate();
 	// const [patientListPage, setPatientListPage] = useState({
 	// 	start: 0,
 	// 	end: 6,
@@ -22,7 +24,9 @@ const TodayAppointment = () => {
 			<div className="today-appointments_header">
 				<HeadingPrimary>Today's Appointments</HeadingPrimary>
 
-				<button className="see-all">See all</button>
+				<button className="see-all" onClick={() => navigate("/appointments")}>
+					See all
+				</button>
 			</div>
 
 			<div className="today-appointments_patients">
