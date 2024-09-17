@@ -18,7 +18,7 @@ const NavList = styled.ul`
 	display: flex;
 	align-items: center;
 	align-self: stretch;
-	// margin: 0 0 0 -100px;
+	padding: 0;
 `;
 
 const NavListItems = styled.li`

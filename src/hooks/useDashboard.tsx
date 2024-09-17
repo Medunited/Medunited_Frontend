@@ -1,6 +1,5 @@
 import { BsPersonFillAdd } from "react-icons/bs";
 import { FaUserNurse, FaBed, FaWarehouse } from "react-icons/fa";
-
 import { bgColor } from "../variables/Variables";
 import { FaUserDoctor, FaPersonWalking } from "react-icons/fa6";
 import { MdPhoneIphone } from "react-icons/md";

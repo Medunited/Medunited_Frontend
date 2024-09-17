@@ -1,19 +1,6 @@
 import styled from "styled-components";
 import { bgColor, borderColor, borderRadius, fontSize, marginTop, textColor, transform } from "../../variables/Variables";
 
-const DashboardHeaderContainer = styled.div`
-	margin-top: ${marginTop.medium};
-
-	border-left: 10px solid ${bgColor.bg_primary_color};
-
-	& .wrapper {
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-		padding: 0.7rem 0;
-	}
-`;
-
 const Button = styled.button`
 	background-color: ${bgColor.bg_secondary_color};
 	border-radius: 30px;
@@ -41,6 +28,14 @@ const Button = styled.button`
 const DashboardOverviewWrapper = styled.section`
 	display: flex;
 	margin: ${marginTop.big} 0 0 0;
+
+	.overview {
+		transition: all 0.2s;
+	}
+
+	&:hover .overview:not(:hover) {
+		transform: scale(0.95);
+	}
 
 	& .overview:not(:last-child) {
 		margin: 0 1.5rem 0 0;
@@ -507,4 +502,4 @@ const DoctorAvailabilityContainer = styled.section`
 	}
 `;
 
-export { DashboardHeaderContainer, Button, DashboardOverviewWrapper, AddNewPatientContainer, PatientAppointmentContainer, PatientChartOverviewContainer, TodayAppointmentContainer, PatientReviewContainer, DoctorAvailabilityContainer };
+export { Button, DashboardOverviewWrapper, AddNewPatientContainer, PatientAppointmentContainer, PatientChartOverviewContainer, TodayAppointmentContainer, PatientReviewContainer, DoctorAvailabilityContainer };

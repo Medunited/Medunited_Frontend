@@ -50,7 +50,7 @@ const Signin = () => {
 							</div>
 
 							<SigninStyle.SiginBtnWrapper>
-								<BtnPrimary name="Login" paddingX="4rem" />
+								<BtnPrimary paddingX="4rem">Login</BtnPrimary>
 							</SigninStyle.SiginBtnWrapper>
 						</div>
 					</form>

@@ -19,6 +19,7 @@ const NavBar = ({ navLink }: NavLinkProps) => {
 			<Container>
 				<div className="wrapper">
 					<Logo />
+
 					<NavStyle.NavList>
 						{navLink.map((param) => (
 							<NavStyle.NavListItems key={param.name}>

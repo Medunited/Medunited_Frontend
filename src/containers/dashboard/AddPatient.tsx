@@ -8,7 +8,7 @@ const AddPatient = () => {
 				<HeadingPrimary>New Patient?</HeadingPrimary>
 
 				<div className="btn-add-patient">
-					<BtnPrimary name="Add New" />
+					<BtnPrimary>Add New</BtnPrimary>
 				</div>
 			</div>
 		</AddNewPatientContainer>
