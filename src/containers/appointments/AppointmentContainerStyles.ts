@@ -13,7 +13,7 @@ const AppointmentListWrapper = styled.div`
 		overflow-y: auto;
 
 		&::-webkit-scrollbar {
-			width: 10px;
+			width: 8px;
 		}
 
 		&::-webkit-scrollbar-thumb {
@@ -23,16 +23,40 @@ const AppointmentListWrapper = styled.div`
 		}
 
 		&::-webkit-scrollbar-track-piece {
-			background-color: #cccccc54;
+			background-color: ${bgColor.bg_white};
 		}
 
 		& .appointment_details {
-			padding: 1rem 3rem;
+			padding: 1.2rem 2rem 1.2rem 3rem;
 			display: flex;
 			border-bottom: 1px solid ${borderColor.border_color};
+			cursor: pointer;
+
+			&:nth-child(even) {
+				background-color: ${bgColor.input_bg_color};
+			}
 
 			& .patient-details {
 				margin: 0 4rem 0 0;
+
+				& .patient-icon {
+					margin: 0 1.5rem 0 0;
+					height: 3.5rem;
+					width: 3.5rem;
+					border-radius: 8px;
+					background-color: ${textColor.text_primary_light};
+					font-size: 2rem;
+					color: ${textColor.text_white};
+
+					display: flex;
+					align-items: center;
+					justify-content: center;
+
+					& svg {
+						width: 1.7rem;
+						height: 1.7rem;
+					}
+				}
 			}
 
 			& .heading_1,
@@ -49,7 +73,30 @@ const AppointmentListWrapper = styled.div`
 			& .heading_2 {
 				font-size: ${fontSize.font_size_small};
 				color: ${textColor.text_primary_light};
-				margin: 0.5rem 0 0 0;
+				margin: 0.4rem 0 0 0;
+			}
+
+			& .section_2 {
+				& .doctor {
+					& .doctor-icon {
+						margin: 0 1.5rem 0 0;
+						height: 3.5rem;
+						width: 3.5rem;
+						border-radius: 3px;
+						background-color: ${textColor.text_primary_light};
+						font-size: 2rem;
+						color: ${textColor.text_white};
+
+						display: flex;
+						align-items: center;
+						justify-content: center;
+
+						& svg {
+							width: 1.7rem;
+							height: 1.7rem;
+						}
+					}
+				}
 			}
 		}
 	}

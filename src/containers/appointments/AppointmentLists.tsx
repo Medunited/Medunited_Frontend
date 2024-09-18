@@ -1,8 +1,23 @@
+import { IoPersonAddSharp } from "react-icons/io5";
 import { HeadingSecondary } from "../../components";
+import { appointmentsList } from "../../hooks/useAppointments";
+import { textColor } from "../../variables/Variables";
 import { AppointmentListWrapper } from "./AppointmentContainerStyles";
+import { FaUserDoctor } from "react-icons/fa6";
+
+// type AppointmentList = {
+// 	name: string;
+// 	appointmentDate: string;
+// 	treatment: string;
+// 	doctorDept: string;
+// 	bookedWith: string;
+// 	appoitmentBookedDate: string;
+// 	status: string;
+// 	appointmentTime: string;
+// 	doctor: string;
+// };
 
 const AppointmentLists = () => {
-	const appointmentLists = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 	return (
 		<AppointmentListWrapper>
 			<div className="appointment-list_heading">
@@ -16,8 +31,8 @@ const AppointmentLists = () => {
 					</div>
 				</div>
 
-				<div className="col-7 d-flex justify-content-between">
-					<div className="col" style={{ padding: "0 0 0 2rem" }}>
+				<div className="col-7 d-flex">
+					<div className="col" style={{ padding: "0 0 0 3.5rem" }}>
 						<HeadingSecondary>Doctor</HeadingSecondary>
 					</div>
 
@@ -25,38 +40,52 @@ const AppointmentLists = () => {
 						<HeadingSecondary>Booked with / on</HeadingSecondary>
 					</div>
 
-					<div className="col-2 text-center">
+					<div className="col-2">
 						<HeadingSecondary>Status</HeadingSecondary>
 					</div>
 				</div>
 			</div>
 
 			<div className="appointment_details_wrapper">
-				{appointmentLists.map(() => (
-					<div className="appointment_details">
+				{appointmentsList.map((items) => (
+					<div key={items.name} className="appointment_details">
 						<div className="section_1 d-flex col">
 							<div className="date col-3">
-								<span className="heading_1">18 Jan 21</span>
-								<span className="heading_2">01:00 pm</span>
+								<span className="heading_1">{items.appointmentDate}</span>
+								<span className="heading_2">{items.appointmentTime}</span>
 							</div>
-							<div className="col patient-details">
-								<span className="heading_1">Samantha Smith</span>
-								<span className="heading_2">Diagnosing and treatment Chest Pain</span>
-							</div>
-						</div>
-						<div className="section_2 col-7 d-flex justify-content-between">
-							<div className="doctor col">
-								<div className="photo"></div>
-								<div className="doctor-details">
-									<span className="heading_1">Dr. Joseph Williams</span>
-									<span className="heading_2">Cardiology Department</span>
+
+							<div className="col patient-details d-flex">
+								<div className="patient-icon">
+									<IoPersonAddSharp />
+								</div>
+								<div>
+									<span className="heading_1">{items.name}</span>
+									<span className="heading_2">{items.treatment}</span>
 								</div>
 							</div>
-							<div className="bookedWith col-4">
-								<span className="heading_1">App Appointment</span>
-								<span className="heading_2">on 15 Jan, 2021, 02:21 pm</span>
+						</div>
+
+						<div className="section_2 col-7 d-flex justify-content-between">
+							<div className="doctor col d-flex">
+								<div className="doctor-icon">
+									<FaUserDoctor />
+								</div>
+
+								<div className="doctor-details">
+									<span className="heading_1">{items.doctor}</span>
+									<span className="heading_2">{items.doctorDept} Department</span>
+								</div>
 							</div>
-							<div className="status col-2 text-center">Accepted</div>
+
+							<div className="bookedWith col-4">
+								<span className="heading_1">{items.bookedWith}</span>
+								<span className="heading_2">on {items.appoitmentBookedDate}</span>
+							</div>
+
+							<div className="status col-2" style={{ color: items.status === "Accepted" ? textColor.text_green : textColor.text_yellow_dark }}>
+								{items.status}
+							</div>
 						</div>
 					</div>
 				))}

@@ -1,7 +1,7 @@
 import { FiPlus } from "react-icons/fi";
 import { BtnPrimary, Container, Header, HeadingPrimary } from "../../components";
 import { AppointmentLists, Main, MainNavBar } from "../../containers";
-import { bgColor, marginTop } from "../../variables/Variables";
+import { bgColor, borderColor, marginTop } from "../../variables/Variables";
 
 const Appointments = () => {
 	return (
@@ -20,7 +20,7 @@ const Appointments = () => {
 
 			<Main>
 				<Container>
-					<div style={{ margin: `${marginTop.medium} 0 0 0`, backgroundColor: bgColor.bg_white, borderRadius: "5px" }}>
+					<div style={{ margin: `${marginTop.medium} 0 0 0`, backgroundColor: bgColor.bg_white, borderRadius: "5px", border: `1px solid ${borderColor.border_color}` }}>
 						<AppointmentLists />
 					</div>
 				</Container>
