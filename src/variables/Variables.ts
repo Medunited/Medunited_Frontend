@@ -17,7 +17,7 @@ export const bgColor = {
 	bg_primary_color: "rgb(88, 92, 229)",
 	bg_secondary_color: "rgb(30,196,245)",
 	bg_secondary_color_light: "rgb(26, 161, 202)",
-	bg_secondary_color_hover: "rgba(26, 161, 202, 0.07)",
+	bg_secondary_color_hover: "rgba(26, 161, 202, 0.06)",
 	bg_secondary_color_active: "rgba(26, 161, 202, 0.1)",
 	bg_primary_color_hover: "rgb(64, 70, 248)",
 	input_bg_color: "rgb(248,249,253)",

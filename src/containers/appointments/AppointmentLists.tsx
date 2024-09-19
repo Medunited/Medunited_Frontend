@@ -4,6 +4,7 @@ import { appointmentsList } from "../../hooks/useAppointments";
 import { textColor } from "../../variables/Variables";
 import { AppointmentListWrapper } from "./AppointmentContainerStyles";
 import { FaUserDoctor } from "react-icons/fa6";
+import { useAppointmentStateManagement } from "../../stateManagement";
 
 // type AppointmentList = {
 // 	name: string;
@@ -18,6 +19,9 @@ import { FaUserDoctor } from "react-icons/fa6";
 // };
 
 const AppointmentLists = () => {
+	const { startPage, endPage } = useAppointmentStateManagement();
+	const appointments = appointmentsList.slice(startPage, endPage);
+
 	return (
 		<AppointmentListWrapper>
 			<div className="appointment-list_heading">
@@ -47,8 +51,8 @@ const AppointmentLists = () => {
 			</div>
 
 			<div className="appointment_details_wrapper">
-				{appointmentsList.map((items) => (
-					<div key={items.name} className="appointment_details">
+				{appointments.map((items, index) => (
+					<div key={index} className="appointment_details">
 						<div className="section_1 d-flex col">
 							<div className="date col-3">
 								<span className="heading_1">{items.appointmentDate}</span>
@@ -60,7 +64,9 @@ const AppointmentLists = () => {
 									<IoPersonAddSharp />
 								</div>
 								<div>
-									<span className="heading_1">{items.name}</span>
+									<span className="heading_1">
+										{items.name} {index + 1}
+									</span>
 									<span className="heading_2">{items.treatment}</span>
 								</div>
 							</div>
