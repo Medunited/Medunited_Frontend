@@ -1,16 +1,27 @@
 import { create } from "zustand";
 
 interface AppointmentProps {
-	startPage: number;
-	endPage: number;
+	appointmentListStartPage: number;
+	appointmentListEndPage: number;
+	appointmentListPageLimit: number;
 
-	nextPage: (pageNumber: number) => void;
+	doctorStartPage: number;
+	doctorEndPage: number;
+	doctorPageLimit: number;
+
+	nextPage: (listStartName: string, listEndName: string, pagelimit: number, pageNumber: number) => void;
 }
 
 const useAppointmentStateManagement = create<AppointmentProps>((set) => ({
-	startPage: 0,
-	endPage: 7,
-	nextPage: (pageNumber) => set(() => ({ startPage: pageNumber, endPage: pageNumber + 7 })),
+	appointmentListStartPage: 0,
+	appointmentListEndPage: 7,
+	appointmentListPageLimit: 7,
+
+	doctorStartPage: 0,
+	doctorEndPage: 7,
+	doctorPageLimit: 7,
+
+	nextPage: (listStartName, listEndName, pagelimit, pageNumber) => set(() => ({ [listStartName]: pageNumber, [listEndName]: pageNumber + pagelimit })),
 }));
 
 export default useAppointmentStateManagement;

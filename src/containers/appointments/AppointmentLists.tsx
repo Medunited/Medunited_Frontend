@@ -19,8 +19,8 @@ import { useAppointmentStateManagement } from "../../stateManagement";
 // };
 
 const AppointmentLists = () => {
-	const { startPage, endPage } = useAppointmentStateManagement();
-	const appointments = appointmentsList.slice(startPage, endPage);
+	const { appointmentListStartPage, appointmentListEndPage } = useAppointmentStateManagement();
+	const appointments = appointmentsList.slice(appointmentListStartPage, appointmentListEndPage);
 
 	return (
 		<AppointmentListWrapper>

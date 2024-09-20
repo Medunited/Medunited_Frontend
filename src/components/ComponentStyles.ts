@@ -5,18 +5,6 @@ const Wrapper = styled.div`
 	width: 1200px;
 	margin: 0 auto;
 	padding: 0;
-
-	@media screen and (min-width: 2100px) {
-		// width: 1200px;
-	}
-
-	@media screen and (min-width: 3100px) {
-		// width: 60%;
-	}
-
-	// @media screen and (max-width: 1290px) {
-	// 	width: 1200px;
-	// }
 `;
 
 const HeaderContainer = styled.div`
@@ -120,4 +108,62 @@ const HeadingSecondaryContainer = styled.h2`
 	color: ${textColor.text_primary_light};
 `;
 
-export { Heading, BtnPrimaryWrapper, Wrapper, OverviewWrapper, HeaderContainer, HeadingSecondaryContainer };
+const PaginationContainer = styled.div`
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	font-weight: 500;
+
+	& .showingItemsNumber {
+		font-size: ${fontSize.font_size_medium};
+	}
+
+	& .pagination {
+		display: flex;
+		align-items: center;
+
+		& #active {
+			background-color: ${bgColor.bg_dark};
+			color: #fff;
+		}
+
+		& .paginationBtn {
+			background-color: ${bgColor.bg_white};
+			border-radius: 3px;
+			padding: 0.5rem 1rem;
+
+			&:hover {
+				background-color: ${bgColor.bg_secondary_color_hover};
+			}
+
+			&:active,
+			&:focus {
+				background-color: ${bgColor.bg_dark};
+				color: #fff;
+			}
+
+			&:active:not([disabled]),
+			&:focus:not([disabled]) {
+				${transform.text_transform};
+			}
+
+			&[disabled] {
+				background-color: ${bgColor.input_bg_color};
+				color: ${textColor.text_primary_light};
+			}
+		}
+
+		& .btn-previous,
+		& .btn-next {
+			display: flex;
+			align-items: center;
+		}
+
+		& .pageNumberBtn,
+		& .btn-previous {
+			margin: 0 0.5rem 0 0;
+		}
+	}
+`;
+
+export { Heading, BtnPrimaryWrapper, Wrapper, OverviewWrapper, HeaderContainer, HeadingSecondaryContainer, PaginationContainer };
