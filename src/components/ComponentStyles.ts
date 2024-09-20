@@ -113,55 +113,96 @@ const PaginationContainer = styled.div`
 	align-items: center;
 	justify-content: space-between;
 	font-weight: 500;
+	font-size: ${fontSize.font_size_medium};
 
 	& .showingItemsNumber {
-		font-size: ${fontSize.font_size_medium};
+		// font-size: ${fontSize.font_size_medium};
 	}
 
 	& .pagination {
 		display: flex;
 		align-items: center;
 
-		& #active {
-			background-color: ${bgColor.bg_dark};
-			color: #fff;
-		}
+		& .pagination-page-numbers {
+			display: flex;
+			align-items: center;
 
-		& .paginationBtn {
-			background-color: ${bgColor.bg_white};
-			border-radius: 3px;
-			padding: 0.5rem 1rem;
-
-			&:hover {
-				background-color: ${bgColor.bg_secondary_color_hover};
-			}
-
-			&:active,
-			&:focus {
+			& #active {
 				background-color: ${bgColor.bg_dark};
 				color: #fff;
 			}
 
-			&:active:not([disabled]),
-			&:focus:not([disabled]) {
-				${transform.text_transform};
+			& .paginationBtn {
+				background-color: ${bgColor.bg_white};
+				border-radius: 3px;
+				padding: 0.5rem 1rem;
+				border: 1px solid ${borderColor.border_color};
+
+				&:hover {
+					background-color: ${bgColor.bg_secondary_color_hover};
+				}
+
+				&:active,
+				&:focus {
+					background-color: ${bgColor.bg_dark};
+					color: #fff;
+				}
+
+				&:active:not([disabled]),
+				&:focus:not([disabled]) {
+					${transform.text_transform};
+				}
+
+				&[disabled] {
+					background-color: ${bgColor.input_bg_color};
+					color: ${textColor.text_primary_light};
+				}
 			}
 
-			&[disabled] {
-				background-color: ${bgColor.input_bg_color};
-				color: ${textColor.text_primary_light};
+			& .btn-previous,
+			& .btn-next {
+				display: flex;
+				align-items: center;
+			}
+
+			& .pageNumberBtn,
+			& .btn-previous {
+				margin: 0 0.5rem 0 0;
 			}
 		}
 
-		& .btn-previous,
-		& .btn-next {
+		& .goTo {
 			display: flex;
 			align-items: center;
-		}
+			margin: 0 0 0 2rem;
 
-		& .pageNumberBtn,
-		& .btn-previous {
-			margin: 0 0.5rem 0 0;
+			& .go-to-page {
+				font-weight: 400;
+				cursor: pointer;
+			}
+
+			& .input-page-no {
+				align-self: stretch;
+				margin: 0 1rem;
+				width: 7rem;
+				border-radius: 3px;
+				border: 1px solid ${borderColor.border_color};
+				padding: 0 1rem;
+			}
+
+			& .btn-go {
+				background-color: ${bgColor.bg_dark};
+				border-radius: 3px;
+				color: #fff;
+				padding: 0.5rem 1.5rem;
+				border: 1px solid ${borderColor.border_color};
+				${transform.menu_transform};
+
+				&[disabled] {
+					background-color: ${bgColor.input_bg_color};
+					color: ${textColor.text_primary_light};
+				}
+			}
 		}
 	}
 `;
