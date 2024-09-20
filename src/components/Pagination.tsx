@@ -47,8 +47,12 @@ const Pagination = ({ paginationParams }: PaginationProps) => {
 
 	// Go to Page
 	const checkGoToPageValue = () => {
-		setIndexNum(parseInt(goToPageNumber));
-		nextPrevPage(parseInt(goToPageNumber) * paginationParams.pageLimit - 7);
+		if (goToPageNumber) {
+			setIndexNum(parseInt(goToPageNumber));
+			nextPrevPage(parseInt(goToPageNumber) * paginationParams.pageLimit - 7);
+		} else {
+			return;
+		}
 	};
 
 	return (
