@@ -123,6 +123,53 @@ const PaginationContainer = styled.div`
 		display: flex;
 		align-items: center;
 
+		& .item-per-page {
+			font-weight: 400;
+			margin: 0 3rem 0 0;
+			display: flex;
+			align-items: center;
+			position: relative;
+
+			& .text {
+				margin: 0 1rem 0 0;
+			}
+
+			& .page-number-list,
+			& .select-page-number {
+				border: 1px solid ${borderColor.border_color};
+			}
+
+			& .page-number-list {
+				padding: 0.5rem 0;
+				position: absolute;
+				right: -7px;
+				background-color: ${bgColor.bg_white};
+				border-radius: 3px;
+
+				& .page-no {
+					cursor: pointer;
+					padding: 0.2rem 2rem 0.2rem 1.5rem;
+
+					&:hover {
+						background-color: ${bgColor.bg_secondary_color_hover};
+					}
+				}
+			}
+			& .select-page-number {
+				cursor: pointer;
+				padding: 0.5rem 1rem;
+				border-radius: 3px;
+
+				&:hover {
+					background-color: ${bgColor.bg_secondary_color_hover};
+				}
+
+				& .page-number {
+					margin: 0 0.1rem 0 0;
+				}
+			}
+		}
+
 		& .pagination-page-numbers {
 			display: flex;
 			align-items: center;
