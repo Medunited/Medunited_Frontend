@@ -71,7 +71,7 @@ const AppointmentListWrapper = styled.div`
 			& .heading_1,
 			& .status {
 				font-size: ${fontSize.font_size_medium};
-				font-weight: 500;
+				font-weight: 550;
 			}
 
 			& .heading_2 {

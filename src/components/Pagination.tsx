@@ -32,7 +32,7 @@ const Pagination = ({ paginationParams }: PaginationProps) => {
 		nextPagesNumber = listPageNo / paginationParams.pageLimit + 1;
 	}
 
-	const pages = [];
+	let pages = [];
 
 	for (let i = 1; i <= nextPagesNumber; i++) {
 		pages.push(i);
@@ -116,18 +116,35 @@ const Pagination = ({ paginationParams }: PaginationProps) => {
 								<span>Previous</span>
 							</button>
 							{/* Pages */}
-							{pages.map((pages) => (
-								<button
-									key={pages}
-									className="paginationBtn pageNumberBtn"
-									id={pages === pageNoIndex ? "active" : ""}
-									onClick={() => {
-										nextPrevPage((pages - 1) * paginationParams.pageLimit);
-										setPageNoIndex(pages); //Changes the index to the page number clicked so that next page will be selected on clicking next or previous button
-									}}>
-									{pages}
-								</button>
-							))}
+
+							<>
+								{pages.slice(0, 4).map((pages) => (
+									<button
+										key={pages}
+										className="paginationBtn pageNumberBtn"
+										id={pages === pageNoIndex ? "active" : ""}
+										onClick={() => {
+											nextPrevPage((pages - 1) * paginationParams.pageLimit);
+											setPageNoIndex(pages); //Changes the index to the page number clicked so that next page will be selected on clicking next or previous button
+										}}>
+										{pages}
+									</button>
+								))}
+								{nextPagesNumber > 5 && (
+									<>
+										<span className="me-3 ms-2">...</span>
+										<button
+											className="paginationBtn pageNumberBtn"
+											onClick={() => {
+												nextPrevPage((pages[pages.length - 1] - 1) * paginationParams.pageLimit);
+												setPageNoIndex(pages[pages.length - 1]); //Changes the index to the page number clicked so that next page will be selected on clicking next or previous button
+											}}>
+											{pages[pages.length - 1]}
+										</button>
+									</>
+								)}
+							</>
+
 							{/* Next Button */}
 							<button
 								disabled={paginationParams.endPage >= listPageNo}
