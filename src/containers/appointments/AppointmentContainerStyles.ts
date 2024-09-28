@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { bgColor, borderColor, fontSize, textColor } from "../../variables/Variables";
+import { bgColor, borderColor, borderRadius, fontSize, textColor } from "../../variables/Variables";
 
 const AppointmentListWrapper = styled.div`
 	& .appointment-list_heading {
@@ -71,7 +71,7 @@ const AppointmentListWrapper = styled.div`
 			& .heading_1,
 			& .status {
 				font-size: ${fontSize.font_size_medium};
-				font-weight: 550;
+				font-weight: 500;
 			}
 
 			& .heading_2 {
@@ -106,4 +106,84 @@ const AppointmentListWrapper = styled.div`
 	}
 `;
 
-export { AppointmentListWrapper };
+const SelectDoctorContainer = styled.section`
+	background-color: ${bgColor.bg_white};
+	border-radius: ${borderRadius.small};
+
+	& .select-doctor-wrapper {
+		padding: 2rem 4rem;
+
+		& .heading_1 {
+			font-size: ${fontSize.font_size_medium_1};
+			font-weight: 500;
+		}
+
+		& .heading_2 {
+			color: ${textColor.text_primary_light};
+			padding: 0 0 0 2rem;
+			margin: 0 0 1rem 0;
+			display: block;
+		}
+
+		& .select-doctor-info {
+			font-size: ${fontSize.font_size_small};
+
+			& .doctor-info {
+				& .department,
+				& .selected-available-doctor {
+					background-color: ${bgColor.input_bg_color_1};
+					border-radius: 30px;
+					padding: 1rem 2rem;
+					cursor: pointer;
+
+					position: relative;
+
+					&:hover {
+						background-color: ${bgColor.bg_secondary_color_hover};
+					}
+
+					&:active {
+						background-color: ${bgColor.input_bg_color_1};
+					}
+				}
+
+				& .departments-list {
+					position: absolute;
+					top: 100%;
+					right: 0;
+					z-index: 1000;
+					// border: 1px solid ${borderColor.border_color};
+					border-radius: 5px;
+					background-color: ${bgColor.input_bg_color_1};
+					transition: all 2s;
+					padding: 0.7rem 0;
+
+					& .department-name,
+					& .doctor-name {
+						padding: 0.7rem 4rem;
+
+						&:hover {
+							background-color: ${bgColor.bg_secondary_color_hover};
+						}
+					}
+				}
+
+				& .selected-department,
+				& .selected-doctor {
+					display: flex;
+					justify-content: space-between;
+					align-items: center;
+				}
+			}
+
+			& .select-department-wrapper,
+			& .select-date,
+			& .select-time,
+			& .available-doctor {
+				margin: 2rem 0 0 0;
+			}
+		}
+	}
+`;
+
+export { AppointmentListWrapper, SelectDoctorContainer };

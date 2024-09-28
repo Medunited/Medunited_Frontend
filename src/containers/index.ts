@@ -8,4 +8,6 @@ export { default as TodayAppointment } from "./dashboard/TodayAppointment";
 export { default as PatientReviews } from "./dashboard/PatientReviews";
 export { default as DoctorAvaliabilty } from "./dashboard/DoctorAvaliability";
 export { default as AppointmentLists } from "./appointments/AppointmentLists";
+export { default as SelectDoctor } from "./appointments/SelectDoctor";
+export { default as PatientInfo } from "./appointments/PatientInfo";
 export { default as Main } from "./Main";

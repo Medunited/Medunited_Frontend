@@ -1,98 +1,70 @@
-import { IoIosArrowBack, IoIosArrowForward, IoMdArrowDropdown } from "react-icons/io";
-import { useAppointmentStateManagement } from "../stateManagement";
+import ReactPaginate from "react-paginate";
 import { PaginationContainer } from "./ComponentStyles";
-import { useState } from "react";
+import { AppointmentList } from "../containers/appointments/AppointmentLists";
+import { IoMdArrowDropdown } from "react-icons/io";
+import useClickOutside from "../hooks/useClickOutside";
+import { RefObject, useState } from "react";
 
-type PaginationTypes = {
-	startPage: number;
-	endPage: number;
-	pageLimit: number;
-	listStartName: string;
-	listEndName: string;
-	listItems: any[];
+type PaginationProps = {
+	ItemsPerPage: number;
+	itemOffset: number;
+	endOffset: number;
+	ref: RefObject<any>;
+
+	setItemOffset: (newOffset: number) => void;
+	setItemPerPage: (itemPerPage: number) => void;
+	items: AppointmentList[];
 };
 
-interface PaginationProps {
-	paginationParams: PaginationTypes;
+interface PaginationParamsProps {
+	paginationParams: PaginationProps;
 }
 
-const Pagination = ({ paginationParams }: PaginationProps) => {
-	const { nextPage, setItemPerPage, appointmentListPageLimit, pageNoIndex, setPageNoIndex } = useAppointmentStateManagement();
-
-	const [goToPageNumber, setGoToPageNumber] = useState("");
+const Pagination = ({ paginationParams }: PaginationParamsProps) => {
+	const itemsPerPageList = [7, 15, 25, 100];
+	const pageCount = Math.ceil(paginationParams.items.length / paginationParams.ItemsPerPage);
 
 	const [pageNoSelect, setPageNoSelect] = useState(false);
+	const handleShowPageNoSelect = () => setPageNoSelect(!pageNoSelect);
+	const handleClosePageNoSelect = () => setPageNoSelect(false);
 
-	let listPageNo = paginationParams.listItems.length;
-	let nextPagesNumber;
+	useClickOutside(paginationParams.ref, handleClosePageNoSelect);
 
-	if (listPageNo % paginationParams.pageLimit === 0) {
-		nextPagesNumber = listPageNo / paginationParams.pageLimit;
-	} else {
-		nextPagesNumber = listPageNo / paginationParams.pageLimit + 1;
-	}
+	// Invoke when user click to request another page.
+	const handlePageClick = (event: any) => {
+		const newOffset = (event.selected * paginationParams.ItemsPerPage) % paginationParams.items.length;
 
-	let pages = [];
-
-	for (let i = 1; i <= nextPagesNumber; i++) {
-		pages.push(i);
-	}
-
-	// Items per page list
-	const itemsPerPageList = [7, 14, 21, 100];
-
-	// Invalid page input for go to page
-	const invalidPage = parseInt(goToPageNumber) <= 0 || parseInt(goToPageNumber) > pages.length;
-
-	// Next and previous button function on click
-	const nextPrevPage = (pageNo: number) => {
-		nextPage(paginationParams.listStartName, paginationParams.listEndName, paginationParams.pageLimit, pageNo);
-		setGoToPageNumber("");
-	};
-
-	// Go to Page
-	const checkGoToPageValue = () => {
-		if (goToPageNumber) {
-			setPageNoIndex(parseInt(goToPageNumber));
-			nextPrevPage(parseInt(goToPageNumber) * paginationParams.pageLimit - paginationParams.pageLimit);
-		} else {
-			return;
-		}
+		paginationParams.setItemOffset(newOffset);
 	};
 
 	return (
 		<PaginationContainer>
-			{/* Showing 1 - pageLimit of 50 items section */}
+			<div className="showingItemsNumber">
+				Showing {paginationParams.itemOffset + 1} - {paginationParams.endOffset > paginationParams.items.length ? paginationParams.items.length : paginationParams.endOffset} items of {paginationParams.items.length} items
+			</div>
 
-			{paginationParams.startPage + 1 !== listPageNo ? (
-				<div className="showingItemsNumber">
-					Showing {paginationParams.startPage + 1} &ndash;
-					{listPageNo - paginationParams.endPage <= 0 ? listPageNo : paginationParams.endPage} of {listPageNo} items
-				</div>
-			) : (
-				<div className="showingItemsNumber">
-					Showing {paginationParams.startPage + 1} of {listPageNo} items
-				</div>
-			)}
-
-			<div className="pagination">
+			<div className="d-flex align-items-center">
 				{/*To choose number of Items to display per page */}
+
 				<div className="item-per-page">
 					<span className="text">Items per page</span>
-					<div className="select-page-number" onClick={() => setPageNoSelect(true)}>
-						<span className="page-number">{appointmentListPageLimit}</span>
+					<div className="select-page-number" onClick={handleShowPageNoSelect}>
+						<span className="page-number">{paginationParams.ItemsPerPage}</span>
 						<IoMdArrowDropdown size={18} />
 					</div>
+
 					{/* Different page numbers to select from */}
+
 					{pageNoSelect && (
-						<div className="page-number-list" onClick={() => setPageNoSelect(false)}>
+						<div className="page-number-list" ref={paginationParams.ref}>
 							{itemsPerPageList.map((pageNo) => (
 								<div
 									key={pageNo}
 									className="page-no"
 									onClick={() => {
-										setItemPerPage(pageNo); //Refreshes the list to first page
-										setPageNoIndex(1); //Sets the page number to page 1
+										handleClosePageNoSelect();
+										paginationParams.setItemPerPage(pageNo);
+										paginationParams.setItemOffset(0);
 									}}>
 									{pageNo}
 								</div>
@@ -100,78 +72,29 @@ const Pagination = ({ paginationParams }: PaginationProps) => {
 						</div>
 					)}
 				</div>
-				{/* Page numbering section */}
-				{listPageNo > paginationParams.pageLimit && (
-					<div className="d-flex">
-						{/* Previous Button */}
-						<div className="pagination-page-numbers">
-							<button
-								disabled={paginationParams.startPage <= 0}
-								className="paginationBtn btn-previous"
-								onClick={() => {
-									nextPrevPage(paginationParams.startPage - paginationParams.pageLimit);
-									setPageNoIndex(pageNoIndex - 1);
-								}}>
-								<IoIosArrowBack />
-								<span>Previous</span>
-							</button>
-							{/* Pages */}
 
-							<>
-								{pages.slice(0, 4).map((pages) => (
-									<button
-										key={pages}
-										className="paginationBtn pageNumberBtn"
-										id={pages === pageNoIndex ? "active" : ""}
-										onClick={() => {
-											nextPrevPage((pages - 1) * paginationParams.pageLimit);
-											setPageNoIndex(pages); //Changes the index to the page number clicked so that next page will be selected on clicking next or previous button
-										}}>
-										{pages}
-									</button>
-								))}
-								{nextPagesNumber > 5 && (
-									<>
-										<span className="me-3 ms-2">...</span>
-										<button
-											className="paginationBtn pageNumberBtn"
-											onClick={() => {
-												nextPrevPage((pages[pages.length - 1] - 1) * paginationParams.pageLimit);
-												setPageNoIndex(pages[pages.length - 1]); //Changes the index to the page number clicked so that next page will be selected on clicking next or previous button
-											}}>
-											{pages[pages.length - 1]}
-										</button>
-									</>
-								)}
-							</>
-
-							{/* Next Button */}
-							<button
-								disabled={paginationParams.endPage >= listPageNo}
-								className="paginationBtn btn-next"
-								onClick={() => {
-									nextPrevPage(paginationParams.startPage + paginationParams.pageLimit);
-									setPageNoIndex(pageNoIndex + 1);
-								}}>
-								<span>Next</span>
-								<IoIosArrowForward />
-							</button>
-						</div>
+				{paginationParams.endOffset <= paginationParams.items.length && (
+					<div className="d-flex animate__animated animate__bounceIn">
+						<ReactPaginate breakLabel="..." nextLabel="next >" onPageChange={handlePageClick} forcePage={paginationParams.itemOffset == 0 ? 0 : undefined} pageRangeDisplayed={2} pageCount={pageCount} previousLabel="< previous" renderOnZeroPageCount={null} />
 						{/* Go to a page number section */}
-						<div className="goTo">
+						{/* <div className="goTo">
 							<label htmlFor="input-page-no" className="go-to-page">
 								Go to page
 							</label>
-							<input type="number" className="input-page-no" id="input-page-no" value={goToPageNumber} onChange={(e) => setGoToPageNumber(e.target.value)} />
-							<button disabled={invalidPage} className="btn-go" onClick={() => checkGoToPageValue()}>
-								{invalidPage ? "Invalid Page no" : "Go"}
+							<input type="number" className="input-page-no" id="input-page-no" value={paginationParams.goToPageNo} onChange={(e) => paginationParams.setGoToPage(parseInt(e.target.value))} />
+							<button
+								className="btn-go"
+								onClick={() => {
+									setGoTo(paginationParams.goToPageNo);
+									console.log(paginationParams.goToPageNo);
+								}}>
+								Go
 							</button>
-						</div>
+						</div> */}
 					</div>
 				)}
 			</div>
 		</PaginationContainer>
 	);
 };
-
 export default Pagination;

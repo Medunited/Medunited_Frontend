@@ -43,14 +43,12 @@ const DashboardOverviewWrapper = styled.section`
 `;
 
 const AddNewPatientContainer = styled.section`
-	border-radius: ${borderRadius};
-	border: 1px solid ${borderColor.border_color};
+	border-radius: ${borderRadius.big};
+	background-color: ${bgColor.bg_secondary_color};
+	padding: 3.2rem 3rem;
 
 	& .new-patient-container {
-		padding: 3.2rem 3rem;
 		color: ${textColor.text_white};
-		background-color: ${bgColor.bg_secondary_color};
-		border-radius: ${borderRadius};
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
@@ -59,7 +57,7 @@ const AddNewPatientContainer = styled.section`
 
 const PatientAppointmentContainer = styled.section`
 	background-color: ${bgColor.bg_white};
-	border-radius: ${borderRadius};
+	border-radius: ${borderRadius.big};
 	padding: 2.5rem 3rem 2rem 3rem;
 	margin: ${marginTop.small} 0 0 0;
 	border: 1px solid ${borderColor.border_color};
@@ -121,7 +119,7 @@ const PatientAppointmentContainer = styled.section`
 `;
 
 const PatientChartOverviewContainer = styled.section`
-	border-radius: ${borderRadius};
+	border-radius: ${borderRadius.big};
 	padding: 2.5rem 3rem 2rem 3rem;
 	background-color: ${bgColor.bg_white};
 	border: 1px solid ${borderColor.border_color};
@@ -159,7 +157,7 @@ const PatientChartOverviewContainer = styled.section`
 
 const TodayAppointmentContainer = styled.section`
 	margin: ${marginTop.small} 0 0 0;
-	border-radius: ${borderRadius};
+	border-radius: ${borderRadius.big};
 	background-color: ${bgColor.bg_white};
 	overflow: hidden;
 	padding-bottom: 0.5rem;
@@ -259,7 +257,7 @@ const TodayAppointmentContainer = styled.section`
 const PatientReviewContainer = styled.section`
 	padding: 2.5rem 3rem 2rem 3rem;
 	background-color: ${bgColor.bg_white};
-	border-radius: ${borderRadius};
+	border-radius: ${borderRadius.big};
 	margin: ${marginTop.small} 0 0 0;
 	border: 1px solid ${borderColor.border_color};
 
@@ -416,7 +414,7 @@ const PatientReviewContainer = styled.section`
 const DoctorAvailabilityContainer = styled.section`
 	background-color: ${bgColor.bg_white};
 	margin: ${marginTop.small} 0 0 0;
-	border-radius: ${borderRadius};
+	border-radius: ${borderRadius.big};
 	padding-bottom: 1rem;
 	border: 1px solid ${borderColor.border_color};
 

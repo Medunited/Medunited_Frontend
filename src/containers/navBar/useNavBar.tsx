@@ -11,7 +11,7 @@ export const dashboardNavLink = [
 ];
 
 export const mainNavLink = [
-	{ icon: <PiCalendarDotsBold />, name: "Appointments", link: "" },
+	{ icon: <PiCalendarDotsBold />, name: "Appointments", link: "/appointments" },
 	{ icon: <FaPlusSquare />, name: "Doctors", link: "" },
 	{ icon: <MdAirlineSeatReclineExtra />, name: "Patients", link: "" },
 	{ icon: <RiHourglassFill />, name: "Rooms", link: "" },

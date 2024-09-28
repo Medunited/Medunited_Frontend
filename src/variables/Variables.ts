@@ -21,6 +21,7 @@ export const bgColor = {
 	bg_secondary_color_active: "rgba(26, 161, 202, 0.1)",
 	bg_primary_color_hover: "rgb(64, 70, 248)",
 	input_bg_color: "rgb(248,249,253)",
+	input_bg_color_1: "rgb(244,245,248)",
 	bg_color_light: "rgba(0, 0, 0, 0.3)",
 
 	bg_white: "#fff",
@@ -60,7 +61,10 @@ export const marginTop = {
 export const padding = {};
 
 // Border-radius
-export const borderRadius = `20px`;
+export const borderRadius = {
+	big: "20px",
+	small: "5px",
+};
 
 // Transforms
 export const transform = {

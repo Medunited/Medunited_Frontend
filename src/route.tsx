@@ -12,6 +12,7 @@ const route = createBrowserRouter([
 		children: [
 			{ path: "", element: <Pages.Dashboard /> },
 			{ path: "/appointments", element: <Pages.Appointments /> },
+			{ path: "/add-appointment", element: <Pages.AddAppointment /> },
 			{ path: "/doctors", element: <Pages.Doctors /> },
 		],
 	},

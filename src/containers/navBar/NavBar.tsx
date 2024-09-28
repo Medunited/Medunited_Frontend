@@ -3,10 +3,12 @@ import { Container, Logo } from "../../components";
 import { IoIosMenu } from "react-icons/io";
 import { bgColor } from "../../variables/Variables";
 import { ReactNode } from "react";
+import { useNavigate } from "react-router-dom";
 
 type NavLink = {
 	name: string;
 	icon: ReactNode;
+	link: string;
 };
 
 interface NavLinkProps {
@@ -14,6 +16,8 @@ interface NavLinkProps {
 }
 
 const NavBar = ({ navLink }: NavLinkProps) => {
+	const navigate = useNavigate();
+
 	return (
 		<NavStyle.Nav>
 			<Container>
@@ -22,12 +26,13 @@ const NavBar = ({ navLink }: NavLinkProps) => {
 
 					<NavStyle.NavList>
 						{navLink.map((param) => (
-							<NavStyle.NavListItems key={param.name}>
+							<NavStyle.NavListItems key={param.name} onClick={() => navigate(param.link)}>
 								<span>{param.icon}</span>
 								<span>{param.name}</span>
 							</NavStyle.NavListItems>
 						))}
 					</NavStyle.NavList>
+
 					<NavStyle.NavMenu>
 						<div className="icon-container">
 							<div className="icon">

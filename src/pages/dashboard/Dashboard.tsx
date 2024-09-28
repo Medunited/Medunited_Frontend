@@ -11,7 +11,7 @@ const Dashboard = () => {
 		<div>
 			<Con.NavBar navLink={dashboardNavLink} />
 
-			<Con.Main>
+			<>
 				<Header>
 					<HeadingPrimary>Dashboard</HeadingPrimary>
 
@@ -22,7 +22,7 @@ const Dashboard = () => {
 				</Header>
 
 				<Container>
-					<main className="main">
+					<main className="main" style={{ padding: "0 0 3rem 0" }}>
 						{/* Overview or summary of everything */}
 						<div>
 							<Con.DashboardOverview />
@@ -53,7 +53,7 @@ const Dashboard = () => {
 						</AppointmentSection>
 					</main>
 				</Container>
-			</Con.Main>
+			</>
 		</div>
 	);
 };

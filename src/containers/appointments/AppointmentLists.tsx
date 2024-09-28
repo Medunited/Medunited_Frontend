@@ -1,27 +1,26 @@
 import { IoPersonAddSharp } from "react-icons/io5";
 import { HeadingSecondary } from "../../components";
-import { appointmentsList } from "../../hooks/useAppointments";
 import { textColor } from "../../variables/Variables";
 import { AppointmentListWrapper } from "./AppointmentContainerStyles";
 import { FaUserDoctor } from "react-icons/fa6";
-import { useAppointmentStateManagement } from "../../stateManagement";
 
-// type AppointmentList = {
-// 	name: string;
-// 	appointmentDate: string;
-// 	treatment: string;
-// 	doctorDept: string;
-// 	bookedWith: string;
-// 	appoitmentBookedDate: string;
-// 	status: string;
-// 	appointmentTime: string;
-// 	doctor: string;
-// };
+export type AppointmentList = {
+	name: string;
+	appointmentDate: string;
+	treatment: string;
+	doctorDept: string;
+	bookedWith: string;
+	appoitmentBookedDate: string;
+	status: string;
+	appointmentTime: string;
+	doctor: string;
+};
 
-const AppointmentLists = () => {
-	const { appointmentListStartPage, appointmentListEndPage } = useAppointmentStateManagement();
-	const appointments = appointmentsList.slice(appointmentListStartPage, appointmentListEndPage);
+interface AppointmentProps {
+	appointments: AppointmentList[];
+}
 
+const AppointmentLists = ({ appointments }: AppointmentProps) => {
 	return (
 		<AppointmentListWrapper>
 			<div className="appointment-list_heading">
