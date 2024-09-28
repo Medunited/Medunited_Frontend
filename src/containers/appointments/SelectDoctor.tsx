@@ -11,6 +11,8 @@ const SelectDoctor = () => {
 	const [selectDoctor, setSelectDoctor] = useState({
 		department: "",
 		availableDoctor: "",
+		date: "",
+		time: "",
 	});
 
 	// Select Department
@@ -98,7 +100,7 @@ const SelectDoctor = () => {
 
 						<div className="timesContainer">
 							{times.map((time) => (
-								<button key={time} className="time">
+								<button key={time} className="time" onClick={() => setSelectDoctor({ ...selectDoctor, time: time })}>
 									{time}
 								</button>
 							))}

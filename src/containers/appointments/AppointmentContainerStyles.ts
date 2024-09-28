@@ -123,6 +123,7 @@ const SelectDoctorContainer = styled.section`
 			padding: 0 0 0 2rem;
 			margin: 0 0 1rem 0;
 			display: block;
+			font-weight: 500;
 		}
 
 		& .select-doctor-info {
@@ -231,4 +232,102 @@ const SelectDoctorContainer = styled.section`
 	}
 `;
 
-export { AppointmentListWrapper, SelectDoctorContainer };
+const PatientInfoWrapper = styled.section`
+	& .patient-info-container {
+		background-color: ${bgColor.bg_white};
+		border-radius: ${borderRadius.small};
+		padding: 2rem 8rem 4rem 4rem;
+		font-size: ${fontSize.font_size_small};
+
+		& .heading_1 {
+			font-size: ${fontSize.font_size_medium_1};
+			font-weight: 500;
+		}
+
+		& .heading_2 {
+			color: ${textColor.text_primary_light};
+			display: block;
+			font-weight: 500;
+		}
+
+		& .patient-details {
+			margin: 2.5rem 0 0 0;
+
+			& .visited-or-first-time {
+				display: flex;
+				padding: 0 0 0 3rem;
+
+				& .visited {
+					margin: 0 4rem 0 0;
+				}
+
+				& .visited,
+				& .first-time {
+					display: flex;
+					align-items: center;
+				}
+
+				& input {
+					width: 13px;
+					height: 13px;
+					margin: 0 1rem 0 0;
+				}
+
+				& input:checked {
+					background-color: ${bgColor.bg_primary_color};
+				}
+			}
+
+			& .patient-details {
+				margin: 2.5rem 0 0 0;
+
+				& .heading_2 {
+					padding: 0 0 0 3rem;
+				}
+
+				& input {
+					width: 100%;
+					background-color: ${bgColor.input_bg_color_1};
+					padding: 1rem 3rem;
+					border-radius: 30px;
+					margin: 1rem 0 0 0;
+					color: inherit;
+				}
+			}
+
+			& .patient-details_2 {
+				margin: 3rem 0 0 0;
+				display: flex;
+				justify-content: space-between;
+
+				& .patient-number {
+					margin: 0 2rem 0 0;
+				}
+			}
+		}
+	}
+
+	& .get-appointment-btn {
+		display: flex;
+		justify-content: end;
+		margin: 4rem 0 0 0;
+
+		& button {
+			background-color: ${bgColor.bg_primary_color};
+			color: ${textColor.text_white};
+			padding: 1rem 3rem;
+			border-radius: 3px;
+			${transform};
+
+			&:hover {
+				background-color: ${bgColor.bg_primary_color_hover};
+			}
+
+			&:active {
+				background-color: ${bgColor.bg_primary_color};
+			}
+		}
+	}
+`;
+
+export { AppointmentListWrapper, SelectDoctorContainer, PatientInfoWrapper };

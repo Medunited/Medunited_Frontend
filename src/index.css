@@ -35,7 +35,11 @@ a {
 	text-decoration: none;
 }
 
-button {
+button,
+button:focus,
+input,
+input:focus {
 	border: none;
+	outline: 0;
 	background-color: transparent;
 }

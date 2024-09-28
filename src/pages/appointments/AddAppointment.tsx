@@ -12,7 +12,7 @@ const AddAppointment = () => {
 
 			<Main>
 				<div className="d-flex">
-					<div className="col me-3">
+					<div className="col me-4">
 						<SelectDoctor />
 					</div>
 
