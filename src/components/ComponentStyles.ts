@@ -42,9 +42,10 @@ const BtnPrimaryWrapper = styled.button`
 	border-radius: 30px;
 	transition: all 0.2s;
 	font-size: ${fontSize.font_size_medium_1};
-	${transform};
+	${transform.menu_transform};
 
-	&:hover {
+	&:hover,
+	&:focus {
 		background-color: ${bgColor.bg_primary_color_hover};
 	}
 

@@ -2,22 +2,24 @@ import styled from "styled-components";
 import { bgColor, borderColor, borderRadius, fontSize, marginTop, textColor, transform } from "../../variables/Variables";
 
 const Button = styled.button`
-	background-color: ${bgColor.bg_secondary_color};
+	background-color: ${bgColor.bg_secondary_color_light};
 	border-radius: 30px;
 	padding: 0.5rem 1rem 0.5rem 2rem;
 	color: ${textColor.text_white};
 	font-size: ${fontSize.font_size_medium};
 	font-weight: 500;
+	${transform.menu_transform};
 
 	display: flex;
 	align-items: center;
 
-	&:hover {
+	&:hover,
+	&:focus {
 		background-color: ${bgColor.bg_secondary_color_light};
 	}
 
 	&:active {
-		background-color: ${bgColor.bg_secondary_color};
+		background-color: ${bgColor.bg_secondary_color_light};
 	}
 
 	& .time-text {

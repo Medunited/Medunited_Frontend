@@ -74,7 +74,7 @@ const Pagination = ({ paginationParams }: PaginationParamsProps) => {
 				</div>
 
 				{paginationParams.endOffset <= paginationParams.items.length && (
-					<div className="d-flex animate__animated animate__bounceIn">
+					<div className="d-flex animate__animated animate__fadeIn">
 						<ReactPaginate breakLabel="..." nextLabel="next >" onPageChange={handlePageClick} forcePage={paginationParams.itemOffset == 0 ? 0 : undefined} pageRangeDisplayed={2} pageCount={pageCount} previousLabel="< previous" renderOnZeroPageCount={null} />
 						{/* Go to a page number section */}
 						{/* <div className="goTo">

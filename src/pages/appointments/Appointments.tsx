@@ -8,7 +8,7 @@ import { useRef, useState } from "react";
 
 const Appointments = () => {
 	const navigate = useNavigate();
-	const [appointmentItemsPerPage, setAppointmentItemPerPage] = useState(10);
+	const [appointmentItemsPerPage, setAppointmentItemPerPage] = useState(7);
 	const [appointmentItemOffset, setAppointmentItemOffset] = useState(0);
 
 	const appointmentPageRef = useRef(null);
@@ -27,7 +27,7 @@ const Appointments = () => {
 	};
 
 	return (
-		<div>
+		<div className="animate__animated animate__fadeIn">
 			<MainNavBar />
 
 			<Header>

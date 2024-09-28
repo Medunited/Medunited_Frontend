@@ -8,7 +8,7 @@ import { textColor } from "../../variables/Variables";
 
 const Dashboard = () => {
 	return (
-		<div>
+		<div className="animate__animated animate__fadeIn">
 			<Con.NavBar navLink={dashboardNavLink} />
 
 			<>
