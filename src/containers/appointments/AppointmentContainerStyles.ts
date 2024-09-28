@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { bgColor, borderColor, borderRadius, fontSize, textColor } from "../../variables/Variables";
+import { bgColor, borderColor, borderRadius, fontSize, textColor, transform } from "../../variables/Variables";
 
 const AppointmentListWrapper = styled.div`
 	& .appointment-list_heading {
@@ -181,6 +181,51 @@ const SelectDoctorContainer = styled.section`
 			& .select-time,
 			& .available-doctor {
 				margin: 2rem 0 0 0;
+			}
+
+			& .select-date {
+				& .dates {
+					background-color: ${bgColor.input_bg_color_1};
+					border-radius: 30px;
+					height: 35px;
+
+					display: flex;
+					align-items: center;
+					justify-content: center;
+				}
+			}
+
+			& .select-time {
+				& .timesContainer {
+					display: flex;
+					flex-wrap: wrap;
+
+					& .time {
+						width: 9.5rem;
+						height: 4rem;
+						background-color: ${bgColor.input_bg_color_1};
+						display: flex;
+						align-items: center;
+						justify-content: center;
+						border-radius: 30px;
+						margin: 0 1rem 1.2rem 0;
+						cursor: pointer;
+						color: inherit;
+						font-size: 1.32rem;
+						${transform.menu_transform};
+
+						&:hover {
+							background-color: ${bgColor.bg_secondary_color_active};
+							color: inherit;
+						}
+
+						&:active,
+						&:focus {
+							background-color: ${bgColor.bg_secondary_color};
+							color: ${textColor.text_white};
+						}
+					}
+				}
 			}
 		}
 	}

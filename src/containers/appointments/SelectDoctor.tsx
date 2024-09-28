@@ -6,6 +6,7 @@ import useClickOutside from "../../hooks/useClickOutside";
 const SelectDoctor = () => {
 	const departments = ["Cardiology", "Surgery", "Eye", "Cancer", "Cardiology-1", "Cardiology-2"];
 	const availableDoctors = ["Joseph Williamson", "Christian Nzeanorue", "Prince Ogbonna", "Christian Nzeanorue-1", "Prince Ogbonna-1"];
+	const times = ["09:00 am", "10:00 am", "11:00 am", "12:00 pm", "1:00 pm", "2:00 pm", "3:00 pm"];
 
 	const [selectDoctor, setSelectDoctor] = useState({
 		department: "",
@@ -87,8 +88,22 @@ const SelectDoctor = () => {
 							</div>
 						</div>
 					</div>
-					<div className="select-date">Select Date</div>
-					<div className="select-time">Select Time</div>
+					<div className="select-date">
+						<span className="heading_2">Select Date</span>
+
+						<div className="dates">Dates here</div>
+					</div>
+					<div className="select-time">
+						<span className="heading_2">Select Time</span>
+
+						<div className="timesContainer">
+							{times.map((time) => (
+								<button key={time} className="time">
+									{time}
+								</button>
+							))}
+						</div>
+					</div>
 				</div>
 			</div>
 		</SelectDoctorContainer>
