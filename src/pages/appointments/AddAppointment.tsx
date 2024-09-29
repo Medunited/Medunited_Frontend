@@ -12,7 +12,7 @@ const AddAppointment = () => {
 
 			<Main>
 				<div className="d-flex animate__animated animate__fadeIn">
-					<div className="col me-4">
+					<div className="col" style={{ margin: "0 2.5rem 0 0" }}>
 						<SelectDoctor />
 					</div>
 

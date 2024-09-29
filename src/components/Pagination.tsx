@@ -1,7 +1,7 @@
 import ReactPaginate from "react-paginate";
 import { PaginationContainer } from "./ComponentStyles";
 import { AppointmentList } from "../containers/appointments/AppointmentLists";
-import { IoMdArrowDropdown } from "react-icons/io";
+import { IoIosArrowBack, IoIosArrowForward, IoMdArrowDropdown } from "react-icons/io";
 import useClickOutside from "../hooks/useClickOutside";
 import { RefObject, useState } from "react";
 
@@ -73,11 +73,10 @@ const Pagination = ({ paginationParams }: PaginationParamsProps) => {
 					)}
 				</div>
 
-				{paginationParams.endOffset <= paginationParams.items.length && (
-					<div className="d-flex animate__animated animate__fadeIn">
-						<ReactPaginate breakLabel="..." nextLabel="next >" onPageChange={handlePageClick} forcePage={paginationParams.itemOffset == 0 ? 0 : undefined} pageRangeDisplayed={2} pageCount={pageCount} previousLabel="< previous" renderOnZeroPageCount={null} />
-						{/* Go to a page number section */}
-						{/* <div className="goTo">
+				<div className="d-flex animate__animated animate__fadeIn">
+					<ReactPaginate breakLabel="..." nextLabel={<IoIosArrowForward size={17} />} onPageChange={handlePageClick} forcePage={paginationParams.itemOffset == 0 ? 0 : undefined} pageRangeDisplayed={2} pageCount={pageCount} previousLabel={<IoIosArrowBack size={17} />} renderOnZeroPageCount={null} />
+					{/* Go to a page number section */}
+					{/* <div className="goTo">
 							<label htmlFor="input-page-no" className="go-to-page">
 								Go to page
 							</label>
@@ -91,8 +90,7 @@ const Pagination = ({ paginationParams }: PaginationParamsProps) => {
 								Go
 							</button>
 						</div> */}
-					</div>
-				)}
+				</div>
 			</div>
 		</PaginationContainer>
 	);

@@ -1,6 +1,16 @@
+import { useNavigate } from "react-router-dom";
+import { useAppointmentStateManagement } from "../../stateManagement";
 import { PatientInfoWrapper } from "./AppointmentContainerStyles";
 
 const PatientInfo = () => {
+	const { appointmentDetails, setAddAppointment } = useAppointmentStateManagement();
+	const navigate = useNavigate();
+
+	const getAppointment = () => {
+		// Validation
+		navigate("/");
+	};
+
 	return (
 		<PatientInfoWrapper>
 			<div className="patient-info-container">
@@ -9,14 +19,14 @@ const PatientInfo = () => {
 				<div className="patient-details">
 					<div className="visited-or-first-time">
 						<div className="visited">
-							<input type="radio" name="visitedOrFirstTime" id="visited" />
+							<input type="radio" name="visitedOrFirstTime" id="visited" value="visited" onChange={(e) => setAddAppointment(e.target.name, e.target.value)} />
 							<label className="heading_2" htmlFor="visited">
 								Visited before
 							</label>
 						</div>
 
 						<div className="first-time">
-							<input type="radio" name="visitedOrFirstTime" id="firstTimeVisit" />
+							<input type="radio" name="visitedOrFirstTime" value="first_time" id="firstTimeVisit" onChange={(e) => setAddAppointment(e.target.name, e.target.value)} />
 							<label className="heading_2" htmlFor="firstTimeVisit">
 								First time visit
 							</label>
@@ -26,25 +36,25 @@ const PatientInfo = () => {
 					<div className="patient-details">
 						<div className="patient-name">
 							<span className="heading_2">Patient Name</span>
-							<input type="text" placeholder="Patient name" />
+							<input type="text" placeholder="Patient name" name="patientName" value={appointmentDetails.patientName} onChange={(e) => setAddAppointment(e.target.name, e.target.value)} />
 						</div>
 
 						<div className="patient-details_2">
 							<div className="patient-number col">
 								<span className="heading_2">Patient Number</span>
-								<input type="text" placeholder="Phone number" />
+								<input type="text" placeholder="Phone number" name="patientNumber" value={appointmentDetails.patientNumber} onChange={(e) => setAddAppointment(e.target.name, e.target.value)} />
 							</div>
 
 							<div className="patient-email col">
 								<span className="heading_2">Email Address</span>
-								<input type="email" placeholder="Email address" />
+								<input type="email" placeholder="Email address" name="patientEmailAddress" value={appointmentDetails.patientEmailAddress} onChange={(e) => setAddAppointment(e.target.name, e.target.value)} />
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 			<div className="get-appointment-btn">
-				<button>Get Appointment</button>
+				<button onClick={getAppointment}>Get Appointment</button>
 			</div>
 		</PatientInfoWrapper>
 	);

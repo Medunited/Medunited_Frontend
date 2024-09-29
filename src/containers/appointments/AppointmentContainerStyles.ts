@@ -220,8 +220,7 @@ const SelectDoctorContainer = styled.section`
 							color: inherit;
 						}
 
-						&:active,
-						&:focus {
+						&.active {
 							background-color: ${bgColor.bg_secondary_color};
 							color: ${textColor.text_white};
 						}
@@ -271,10 +270,6 @@ const PatientInfoWrapper = styled.section`
 					width: 13px;
 					height: 13px;
 					margin: 0 1rem 0 0;
-				}
-
-				& input:checked {
-					background-color: ${bgColor.bg_primary_color};
 				}
 			}
 

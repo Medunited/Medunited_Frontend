@@ -2,18 +2,14 @@ import { IoMdArrowDropdown } from "react-icons/io";
 import { SelectDoctorContainer } from "./AppointmentContainerStyles";
 import { useRef, useState } from "react";
 import useClickOutside from "../../hooks/useClickOutside";
+import { useAppointmentStateManagement } from "../../stateManagement";
 
 const SelectDoctor = () => {
 	const departments = ["Cardiology", "Surgery", "Eye", "Cancer", "Cardiology-1", "Cardiology-2"];
 	const availableDoctors = ["Joseph Williamson", "Christian Nzeanorue", "Prince Ogbonna", "Christian Nzeanorue-1", "Prince Ogbonna-1"];
 	const times = ["09:00 am", "10:00 am", "11:00 am", "12:00 pm", "1:00 pm", "2:00 pm", "3:00 pm"];
 
-	const [selectDoctor, setSelectDoctor] = useState({
-		department: "",
-		availableDoctor: "",
-		date: "",
-		time: "",
-	});
+	const { appointmentDetails, setAddAppointment } = useAppointmentStateManagement();
 
 	// Select Department
 	const departmentRef = useRef(null);
@@ -45,7 +41,7 @@ const SelectDoctor = () => {
 
 							<div className="department" onClick={handleShowDepartment}>
 								<div className="selected-department">
-									<span>{selectDoctor.department ? `${selectDoctor.department} Department` : `${departments[0]} Department`}</span>
+									<span>{appointmentDetails.department ? `${appointmentDetails.department} Department` : `${departments[0]} Department`}</span>
 									<IoMdArrowDropdown size={19} />
 								</div>
 
@@ -57,7 +53,7 @@ const SelectDoctor = () => {
 												className="department-name"
 												onClick={() => {
 													handleCloseDepartment();
-													setSelectDoctor({ ...selectDoctor, department: department });
+													setAddAppointment("department", department);
 												}}>{`${department} Department`}</li>
 										))}
 									</ul>
@@ -70,7 +66,7 @@ const SelectDoctor = () => {
 
 							<div className="selected-available-doctor" onClick={handleShowDoctor}>
 								<div className="selected-doctor">
-									<span>{selectDoctor.availableDoctor ? `Dr. ${selectDoctor.availableDoctor}` : `Dr. ${availableDoctors[0]}`}</span>
+									<span>{appointmentDetails.doctorName ? `Dr. ${appointmentDetails.doctorName}` : `Dr. ${availableDoctors[0]}`}</span>
 									<IoMdArrowDropdown size={19} />
 								</div>
 
@@ -82,7 +78,7 @@ const SelectDoctor = () => {
 												className="doctor-name"
 												onClick={() => {
 													handleCloseDoctor();
-													setSelectDoctor({ ...selectDoctor, availableDoctor: doctor });
+													setAddAppointment("doctorName", doctor);
 												}}>{`Dr. ${doctor}`}</li>
 										))}
 									</ul>
@@ -100,7 +96,7 @@ const SelectDoctor = () => {
 
 						<div className="timesContainer">
 							{times.map((time) => (
-								<button key={time} className="time" onClick={() => setSelectDoctor({ ...selectDoctor, time: time })}>
+								<button key={time} className={appointmentDetails.time === time ? "active time" : "time"} onClick={() => setAddAppointment("time", time)}>
 									{time}
 								</button>
 							))}
