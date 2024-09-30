@@ -1,6 +1,5 @@
 import ReactPaginate from "react-paginate";
 import { PaginationContainer } from "./ComponentStyles";
-import { AppointmentList } from "../containers/appointments/AppointmentLists";
 import { IoIosArrowBack, IoIosArrowForward, IoMdArrowDropdown } from "react-icons/io";
 import useClickOutside from "../hooks/useClickOutside";
 import { RefObject, useState } from "react";
@@ -10,10 +9,10 @@ type PaginationProps = {
 	itemOffset: number;
 	endOffset: number;
 	ref: RefObject<any>;
-
+	pageDisplayStart: number;
 	setItemOffset: (newOffset: number) => void;
 	setItemPerPage: (itemPerPage: number) => void;
-	items: AppointmentList[];
+	items: any[];
 };
 
 interface PaginationParamsProps {
@@ -21,7 +20,7 @@ interface PaginationParamsProps {
 }
 
 const Pagination = ({ paginationParams }: PaginationParamsProps) => {
-	const itemsPerPageList = [7, 15, 25, 100];
+	const itemsPerPageList = [paginationParams.pageDisplayStart, paginationParams.pageDisplayStart * 2, paginationParams.pageDisplayStart * 3, 100];
 	const pageCount = Math.ceil(paginationParams.items.length / paginationParams.ItemsPerPage);
 
 	const [pageNoSelect, setPageNoSelect] = useState(false);

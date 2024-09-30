@@ -4,7 +4,7 @@
 	--text-color: rgb(77, 77, 77);
 }
 
-* {
+body * {
 	padding: 0;
 	margin: 0;
 	box-sizing: inherit;

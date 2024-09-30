@@ -7,6 +7,12 @@ const Nav = styled.nav`
 	background-color: ${bgColor.bg_white};
 	border-bottom: 1px solid ${borderColor.border_color};
 
+	position: sticky;
+	right: 0;
+	left: 0;
+	top: 0;
+	z-index: 1000000000;
+
 	& .wrapper {
 		display: flex;
 		justify-content: space-between;

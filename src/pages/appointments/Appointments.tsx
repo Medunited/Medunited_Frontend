@@ -8,7 +8,8 @@ import { useRef, useState } from "react";
 
 const Appointments = () => {
 	const navigate = useNavigate();
-	const [appointmentItemsPerPage, setAppointmentItemPerPage] = useState(7);
+	const apppointmentPageDisplayStart = 7;
+	const [appointmentItemsPerPage, setAppointmentItemPerPage] = useState(apppointmentPageDisplayStart);
 	const [appointmentItemOffset, setAppointmentItemOffset] = useState(0);
 
 	const appointmentPageRef = useRef(null);
@@ -24,6 +25,7 @@ const Appointments = () => {
 		ref: appointmentPageRef,
 		setItemOffset: setAppointmentItemOffset,
 		setItemPerPage: setAppointmentItemPerPage,
+		pageDisplayStart: apppointmentPageDisplayStart,
 	};
 
 	return (

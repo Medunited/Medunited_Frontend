@@ -40,9 +40,10 @@ export const borderColor = {
 // Font Sizes
 export const fontSize = {
 	font_size_big: "1.7rem",
-	font_size_medium: "1.3rem",
+	font_size_medium: "1.25rem",
 	font_size_medium_1: "1.4rem",
 	font_size_small: "1.17rem",
+	font_size_tiny: "1.09rem",
 };
 
 // Icon Sizes
