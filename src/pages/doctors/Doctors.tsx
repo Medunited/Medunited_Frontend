@@ -52,8 +52,8 @@ const Doctors = () => {
 			<Main>
 				<div className="animate__animated animate__fadeIn doctor-list-wrapper g-5 row">
 					<>
-						{doctorListItems.map((items) => (
-							<div className="col-4 doctor-list-container">
+						{doctorListItems.map((items, index) => (
+							<div className="col-4 doctor-list-container" key={index}>
 								<DoctorList items={items} />
 							</div>
 						))}

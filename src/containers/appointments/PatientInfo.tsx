@@ -1,14 +1,16 @@
-import { useNavigate } from "react-router-dom";
 import { useAppointmentStateManagement } from "../../stateManagement";
 import { PatientInfoWrapper } from "./AppointmentContainerStyles";
 
 const PatientInfo = () => {
-	const { appointmentDetails, setAddAppointment } = useAppointmentStateManagement();
-	const navigate = useNavigate();
+	const { appointmentDetails, setAddAppointment, setAddAppointmentState } = useAppointmentStateManagement();
+	// const navigate = useNavigate();
 
 	const getAppointment = () => {
 		// Validation
-		navigate("/");
+		// if (appointmentDetails.department === "") {
+		// 	return;
+		// }
+		setAddAppointmentState(true);
 	};
 
 	return (
@@ -53,6 +55,7 @@ const PatientInfo = () => {
 					</div>
 				</div>
 			</div>
+
 			<div className="get-appointment-btn">
 				<button onClick={getAppointment}>Get Appointment</button>
 			</div>

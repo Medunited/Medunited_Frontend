@@ -297,4 +297,54 @@ const PaginationContainer = styled.div`
 	}
 `;
 
-export { Heading, BtnPrimaryWrapper, Wrapper, OverviewWrapper, HeaderContainer, HeadingSecondaryContainer, PaginationContainer };
+const PopUpWrapper = styled.div`
+	position: absolute;
+	top: 0;
+	right: 0;
+	height: 100vh;
+	width: 100%;
+	background-color: rgba(0, 0, 0, 0.4);
+	z-index: 2;
+	backdrop-filter: blur(0.5px);
+
+	& .popup-container {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+
+		width: 400px;
+		background-color: ${bgColor.bg_white};
+		margin: 30px auto;
+		border-radius: 10px;
+		padding: 1rem 2rem 1.5rem 3rem;
+
+		& .text-container {
+			& svg {
+				color: ${bgColor.bg_green};
+				height: 50px;
+				width: 50px;
+			}
+		}
+
+		& .btn_wrapper {
+			display: flex;
+			align-items: center;
+			justify-content: end;
+
+			margin: 5rem 0 0 0;
+
+			& .btn_close {
+				color: inherit;
+				border: 1px solid ${borderColor.border_color};
+				background-color: ${bgColor.bg_secondary_color_hover};
+				padding: 0rem 3rem;
+				align-self: stretch;
+				border-radius: 20px;
+				margin: 0 0.5rem 0 0;
+				${transform.menu_transform};
+			}
+		}
+	}
+`;
+
+export { Heading, BtnPrimaryWrapper, Wrapper, OverviewWrapper, HeaderContainer, HeadingSecondaryContainer, PaginationContainer, PopUpWrapper };

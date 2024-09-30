@@ -14,6 +14,9 @@ type AddAppointmentDetails = {
 interface LoginProps {
 	appointmentDetails: AddAppointmentDetails;
 	setAddAppointment: (name: string, value: string) => void;
+
+	addAppointmentState: boolean;
+	setAddAppointmentState: (state: boolean) => void;
 }
 
 const useAppointmentStateManagement = create<LoginProps>((set) => ({
@@ -27,6 +30,10 @@ const useAppointmentStateManagement = create<LoginProps>((set) => ({
 		patientNumber: "",
 		patientEmailAddress: "",
 	},
+
+	addAppointmentState: false,
+	setAddAppointmentState: (state) => set(() => ({ addAppointmentState: state })),
+
 	setAddAppointment: (name, value) => set((store) => ({ appointmentDetails: { ...store.appointmentDetails, [name]: value } })),
 }));
 

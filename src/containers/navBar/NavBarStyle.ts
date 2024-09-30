@@ -11,7 +11,7 @@ const Nav = styled.nav`
 	right: 0;
 	left: 0;
 	top: 0;
-	z-index: 1000000000;
+	z-index: 1;
 
 	& .wrapper {
 		display: flex;
