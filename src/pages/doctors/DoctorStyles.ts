@@ -9,7 +9,7 @@ const DoctorWrapper = styled.div`
 		& .icon-search {
 			display: flex;
 			transform: translateX(3rem);
-			color: inherit;
+			color: rgba(0, 0, 0, 0.3);
 			align-items: center;
 
 			& svg {
@@ -29,6 +29,10 @@ const DoctorWrapper = styled.div`
 
 			&:focus {
 				border: 1px solid ${borderColor.border_color};
+			}
+
+			&::placeholder {
+				color: rgba(0, 0, 0, 0.3);
 			}
 		}
 	}
