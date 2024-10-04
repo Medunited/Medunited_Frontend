@@ -119,7 +119,7 @@ const SelectDoctorContainer = styled.section`
 		}
 
 		& .heading_2 {
-			color: ${textColor.text_primary_light};
+			// color: ${textColor.text_primary_light};
 			padding: 0 0 0 2rem;
 			margin: 0 0 1rem 0;
 			display: block;
@@ -244,7 +244,7 @@ const PatientInfoWrapper = styled.section`
 		}
 
 		& .heading_2 {
-			color: ${textColor.text_primary_light};
+			// color: ${textColor.text_primary_light};
 			display: block;
 			// font-weight: 500;
 		}
