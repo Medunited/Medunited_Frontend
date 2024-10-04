@@ -1,20 +1,20 @@
 import { IoPersonAddSharp } from "react-icons/io5";
 import { HeadingSecondary } from "../../components";
-import { DoctorAppointmentWrapper } from "./DoctorListStyle";
+import { DoctorAppointmentWrapper } from "./DoctorContainerStyle";
 import { RiProgress8Fill } from "react-icons/ri";
-import { bgColor } from "../../variables/Variables";
+import { bgColor, textColor } from "../../variables/Variables";
 import { appointmentsList } from "../../hooks/useAppointments";
 import useDoctorInfoStateManagement from "../../stateManagement/useDoctorInfoStateManagement";
 
 const DoctorUpcomingAppointments = () => {
-	const { doctorInfo } = useDoctorInfoStateManagement();
+	const { doctorInfo, searchParam } = useDoctorInfoStateManagement();
 
 	const pastAppointments = [1, 2];
 
 	// To get a specific doctor's list of upcoming appointments
 	const upcomingAppointmentList = appointmentsList.filter((item) => item.doctor === doctorInfo.name);
 
-	console.log(upcomingAppointmentList);
+	const searchPatientList = searchParam.patientName ? upcomingAppointmentList.filter((doctor) => doctor.name.toLowerCase().includes(searchParam.patientName.toLowerCase())) : upcomingAppointmentList;
 
 	return (
 		<DoctorAppointmentWrapper>
@@ -41,11 +41,11 @@ const DoctorUpcomingAppointments = () => {
 					<span className="text">Upcoming Appointments</span>
 				</div>
 
-				{upcomingAppointmentList.length > 0 ? (
+				{searchPatientList.length > 0 ? (
 					<div className="appointment-container">
-						{upcomingAppointmentList.map((item, index) => (
+						{searchPatientList.map((item, index) => (
 							<div key={index} className="d-flex appointment_wrapper">
-								<div className={`${index === upcomingAppointmentList.length - 1 && pastAppointments.length > 0 ? "line line-progress_2" : index === upcomingAppointmentList.length - 1 && pastAppointments.length === 0 ? "line" : "line line-progress"}`} style={{ width: "40px" }}>
+								<div className={`${index === searchPatientList.length - 1 && pastAppointments.length > 0 ? "line line-progress_2" : index === searchPatientList.length - 1 && pastAppointments.length === 0 ? "line" : "line line-progress"}`} style={{ width: "40px" }}>
 									<RiProgress8Fill color={bgColor.bg_primary_color} size={17} />
 								</div>
 
@@ -67,13 +67,17 @@ const DoctorUpcomingAppointments = () => {
 										</div>
 									</div>
 
-									<div className="status">{item.status}</div>
+									<div className="status" style={{ color: item.status === "Accepted" ? textColor.text_green : textColor.text_yellow_dark }}>
+										{item.status}
+									</div>
 								</div>
 							</div>
 						))}
 					</div>
 				) : (
-					<div className="no-appointment">No Upcoming Appointment</div>
+					<>
+						<div className="no-appointment text-primary">No upcoming appointment found</div>
+					</>
 				)}
 			</div>
 
@@ -110,7 +114,9 @@ const DoctorUpcomingAppointments = () => {
 										</div>
 									</div>
 
-									<div className="status">Consulted</div>
+									<div className="status" style={{ color: textColor.text_secondary_color }}>
+										Consulted
+									</div>
 								</div>
 							</div>
 						))}

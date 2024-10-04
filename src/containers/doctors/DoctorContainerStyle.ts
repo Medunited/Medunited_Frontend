@@ -317,4 +317,71 @@ const DoctorAppointmentWrapper = styled.section`
 	}
 `;
 
-export { DoctorListWrapper, DoctorInformationWrapper, DoctorAppointmentWrapper };
+const DoctorReviewWrapper = styled.section`
+	padding: 1.5rem 1.5rem 2rem 1.8rem;
+	font-size: ${fontSize.font_size_tiny};
+
+	& .heading {
+		font-size: ${fontSize.font_size_medium};
+		margin: 0 0 2rem 0;
+	}
+
+	& .reviews:not(:last-child) {
+		margin: 0 0 1.5rem 0;
+	}
+
+	& .reviews {
+		& .reviewer {
+			display: flex;
+			margin: 0 0 1rem 0;
+
+			& .reviewer-photo {
+				height: 28px;
+				width: 28px;
+				border-radius: 100%;
+				background-color: rgba(0, 0, 0, 0.3);
+				margin: 0 1.2rem 0 0;
+			}
+
+			& .reviewer-details {
+				flex-grow: 1;
+
+				& .reviewer-name {
+					font-weight: 550;
+				}
+
+				& .rating-and-date-container {
+					display: flex;
+					justify-content: space-between;
+					margin: 0.2rem 0 0 0;
+
+					& .review-rating-container {
+						display: flex;
+						align-items: center;
+
+						& .review-star {
+							display: flex;
+							margin: 0 0.5rem 0 0;
+						}
+
+						& .rating {
+							font-weight: 500;
+							font-size: 1rem;
+						}
+					}
+
+					& .review-date {
+						font-size: 1rem;
+					}
+				}
+			}
+		}
+
+		& .review-text {
+			font-size: ${fontSize.font_size_tiny};
+			hyphens: auto;
+		}
+	}
+`;
+
+export { DoctorListWrapper, DoctorInformationWrapper, DoctorAppointmentWrapper, DoctorReviewWrapper };

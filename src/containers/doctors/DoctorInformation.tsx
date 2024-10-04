@@ -1,4 +1,4 @@
-import { DoctorInformationWrapper } from "./DoctorListStyle";
+import { DoctorInformationWrapper } from "./DoctorContainerStyle";
 import useDoctorInfoStateManagement from "../../stateManagement/useDoctorInfoStateManagement";
 
 const DoctorInformation = () => {

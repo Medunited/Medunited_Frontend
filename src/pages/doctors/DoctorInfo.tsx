@@ -1,13 +1,16 @@
 import { FiPlus } from "react-icons/fi";
-import { Header, HeadingPrimary, BtnPrimary } from "../../components";
-import { MainNavBar, Main, DoctorInformation, DoctorUpcomingAppointments } from "../../containers";
+import { Header, HeadingPrimary, BtnPrimary, BtnSearch } from "../../components";
+import { MainNavBar, Main, DoctorInformation, DoctorUpcomingAppointments, DoctorReviews } from "../../containers";
 import { DoctorInfoWrapper } from "./DoctorStyles";
 import { PiGreaterThanLight } from "react-icons/pi";
 import { fontSize, textColor } from "../../variables/Variables";
 import { useNavigate } from "react-router-dom";
+import useDoctorInfoStateManagement from "../../stateManagement/useDoctorInfoStateManagement";
 
 const DoctorInfo = () => {
 	const navigate = useNavigate();
+
+	const { searchParam } = useDoctorInfoStateManagement();
 
 	return (
 		<DoctorInfoWrapper>
@@ -24,13 +27,17 @@ const DoctorInfo = () => {
 					</div>
 				</div>
 
-				<div onClick={() => navigate("/add-appointment")}>
-					<BtnPrimary>
-						<div className="d-flex">
-							<FiPlus color="inherit" size={20} />
-							<span className="ms-2">Add Appointment</span>
-						</div>
-					</BtnPrimary>
+				<div className="d-flex">
+					<BtnSearch searchParam={searchParam.patientName} searchName="patientName" />
+
+					<div onClick={() => navigate("/add-appointment")} style={{ margin: "0 0 0 2rem" }}>
+						<BtnPrimary>
+							<div className="d-flex">
+								<FiPlus color="inherit" size={20} />
+								<span className="ms-2">Add Appointment</span>
+							</div>
+						</BtnPrimary>
+					</div>
 				</div>
 			</Header>
 
@@ -44,7 +51,9 @@ const DoctorInfo = () => {
 						<DoctorUpcomingAppointments />
 					</div>
 
-					<div className="doctor-reviews col-2">Reviews</div>
+					<div className="doctor-reviews col-2">
+						<DoctorReviews />
+					</div>
 				</div>
 			</Main>
 		</DoctorInfoWrapper>

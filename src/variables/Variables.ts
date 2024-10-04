@@ -78,7 +78,7 @@ export const transform = {
 
 
 		&:hover {
-			transform: scale(.95);
+			transform: scale(1.05);
 		}
 
 		&:active {
@@ -92,7 +92,7 @@ export const transform = {
 
 
 		&:hover {
-			transform: scale(0.95);
+			transform: scale(1.1);
 		}
 
 		&:active {

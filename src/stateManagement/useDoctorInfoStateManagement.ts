@@ -1,9 +1,17 @@
 import { create } from "zustand";
 import { DoctorProps } from "../containers/doctors/DoctorList";
 
+type Search = {
+	doctorName: string;
+	patientName: string;
+};
+
 interface DoctorInfoProps {
 	doctorInfo: DoctorProps;
 	setDoctorInfo: (doctorDetails: DoctorProps) => void;
+
+	searchParam: Search;
+	setSearchParam: (searchName: string, searchValue: string) => void;
 }
 
 const useDoctorInfoStateManagement = create<DoctorInfoProps>((set) => ({
@@ -19,6 +27,13 @@ const useDoctorInfoStateManagement = create<DoctorInfoProps>((set) => ({
 		availabilityEnd: "",
 		ratingStar: null,
 	},
+
+	searchParam: {
+		doctorName: "",
+		patientName: "",
+	},
+
+	setSearchParam: (searchName, searchValue) => set((store) => ({ searchParam: { ...store.searchParam, [searchName]: searchValue } })),
 
 	setDoctorInfo: (doctorDetails) => set(() => ({ doctorInfo: doctorDetails })),
 }));

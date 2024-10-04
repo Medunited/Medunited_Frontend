@@ -4,6 +4,7 @@ import { doctorList } from "../../hooks/useDoctorList";
 import { DoctorWrapper } from "./DoctorStyles";
 import { useRef, useState } from "react";
 import { marginTop } from "../../variables/Variables";
+import useDoctorInfoStateManagement from "../../stateManagement/useDoctorInfoStateManagement";
 
 const Doctors = () => {
 	// const navigate = useNavigate();
@@ -11,9 +12,9 @@ const Doctors = () => {
 	const [doctorListItemsPerPage, setDoctorListItemPerPage] = useState(doctoreListPageDisplayStart);
 	const [doctorListItemOffset, setDoctorListItemOffset] = useState(0);
 
-	const [searchDcotor, setDoctorSearch] = useState("");
+	const { searchParam } = useDoctorInfoStateManagement();
 
-	const searchDoctor = searchDcotor ? doctorList.filter((doctor) => doctor.name.toLowerCase().includes(searchDcotor.toLowerCase())) : doctorList;
+	const searchDoctor = searchParam.doctorName ? doctorList.filter((doctor) => doctor.name.toLowerCase().includes(searchParam.doctorName.toLowerCase())) : doctorList;
 	// const searchDoctor = search ? doctorList.filter((doctor) => doctor.fees <= parseInt(search)) : doctorList;
 
 	const doctorListPageRef = useRef(null);
@@ -25,7 +26,7 @@ const Doctors = () => {
 		itemOffset: doctorListItemOffset,
 		ItemsPerPage: doctorListItemsPerPage,
 		endOffset: doctorListEndOffset,
-		items: searchDcotor ? searchDoctor : doctorList,
+		items: searchParam.doctorName ? searchDoctor : doctorList,
 		ref: doctorListPageRef,
 		pageDisplayStart: doctoreListPageDisplayStart,
 		setItemOffset: setDoctorListItemOffset,
@@ -45,7 +46,7 @@ const Doctors = () => {
 					<BtnPrimary>Add New</BtnPrimary>
 				</div>
 
-				<BtnSearch searchParam={searchDcotor} setSearch={(value) => setDoctorSearch(value)} />
+				<BtnSearch searchParam={searchParam.doctorName} searchName="doctorName" />
 			</Header>
 
 			<Main>

@@ -1,5 +1,6 @@
-import { FaPlusSquare } from "react-icons/fa";
-import { MdAirlineSeatReclineExtra, MdCollections, MdOutlinePostAdd } from "react-icons/md";
+import { FaBed, FaPlusSquare } from "react-icons/fa";
+import { IoPersonSharp } from "react-icons/io5";
+import { MdAirlineSeatReclineExtra, MdBed, MdCollections, MdOutlinePostAdd } from "react-icons/md";
 import { PiCalendarDotsBold } from "react-icons/pi";
 import { RiHourglassFill } from "react-icons/ri";
 
@@ -13,7 +14,7 @@ export const dashboardNavLink = [
 export const mainNavLink = [
 	{ icon: <PiCalendarDotsBold />, name: "Appointments", link: "/appointments" },
 	{ icon: <FaPlusSquare />, name: "Doctors", link: "/doctors" },
-	{ icon: <MdAirlineSeatReclineExtra />, name: "Patients", link: "" },
-	{ icon: <RiHourglassFill />, name: "Rooms", link: "" },
-	{ icon: <RiHourglassFill />, name: "Staff", link: "" },
+	{ icon: <FaBed />, name: "Patients", link: "" },
+	{ icon: <MdBed />, name: "Rooms", link: "" },
+	{ icon: <IoPersonSharp />, name: "Staff", link: "" },
 ];

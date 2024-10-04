@@ -1,5 +1,5 @@
 import { IoIosArrowForward, IoMdStar } from "react-icons/io";
-import { DoctorListWrapper } from "./DoctorListStyle";
+import { DoctorListWrapper } from "./DoctorContainerStyle";
 import { bgColor } from "../../variables/Variables";
 import { MdStarHalf } from "react-icons/md";
 import { useNavigate } from "react-router-dom";

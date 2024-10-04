@@ -23,6 +23,7 @@ const DoctorInfoWrapper = styled.div`
 
 		& .doctor-reviews {
 			background-color: ${bgColor.bg_white};
+			align-self: baseline;
 		}
 
 		& .upcoming-appointment {
