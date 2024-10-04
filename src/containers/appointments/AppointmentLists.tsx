@@ -78,7 +78,7 @@ const AppointmentLists = ({ appointments }: AppointmentProps) => {
 								</div>
 
 								<div className="doctor-details">
-									<span className="heading_1">{items.doctor}</span>
+									<span className="heading_1">Dr. {items.doctor}</span>
 									<span className="heading_2">{items.doctorDept} Department</span>
 								</div>
 							</div>

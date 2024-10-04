@@ -30,7 +30,7 @@ const AddAppointment = () => {
 			<>
 				<MainNavBar />
 				<Header>
-					<HeadingPrimary>Add Appointments</HeadingPrimary>
+					<HeadingPrimary>Add Appointment</HeadingPrimary>
 				</Header>
 				<Main>
 					<div className="d-flex animate__animated animate__fadeIn">

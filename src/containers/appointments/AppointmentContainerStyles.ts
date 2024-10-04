@@ -75,9 +75,9 @@ const AppointmentListWrapper = styled.div`
 			}
 
 			& .heading_2 {
-				font-size: ${fontSize.font_size_small};
+				font-size: ${fontSize.font_size_tiny};
 				color: ${textColor.text_primary_light};
-				margin: 0.4rem 0 0 0;
+				margin: 0.3rem 0 0 0;
 			}
 
 			& .section_2 {

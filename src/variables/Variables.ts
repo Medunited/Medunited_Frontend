@@ -6,6 +6,7 @@ export const textColor = {
 	text_dark: "#000",
 	text_secondary_color: "rgb(30,196,245)",
 	text_secondary_color_light: "rgb(26, 161, 202)",
+	text_blue: "rgb(64, 70, 248)",
 
 	text_green: "rgb(45, 204, 112)",
 	text_yellow_dark: "rgb(244,193,24)",

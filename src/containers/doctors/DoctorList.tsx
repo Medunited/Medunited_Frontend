@@ -2,14 +2,21 @@ import { IoIosArrowForward, IoMdStar } from "react-icons/io";
 import { DoctorListWrapper } from "./DoctorListStyle";
 import { bgColor } from "../../variables/Variables";
 import { MdStarHalf } from "react-icons/md";
+import { useNavigate } from "react-router-dom";
+import useDoctorInfoStateManagement from "../../stateManagement/useDoctorInfoStateManagement";
+import { ReactNode } from "react";
 
-type DoctorProps = {
+export type DoctorProps = {
 	name: string;
 	department: string;
 	yearsOfExperience: string;
 	fees?: number | string | null;
 	rating: number;
 	reviews_number: number;
+	services: string[];
+	availabilityStart: string;
+	availabilityEnd: string;
+	ratingStar?: ReactNode;
 };
 
 interface DoctorListProps {
@@ -17,18 +24,28 @@ interface DoctorListProps {
 }
 
 const DoctorLists = ({ items }: DoctorListProps) => {
+	const { setDoctorInfo } = useDoctorInfoStateManagement();
+	const navigate = useNavigate();
+
 	// Rating Star to display depending on the rating
 	const ratingStar = items.rating >= 3 ? <IoMdStar color={bgColor.bg_yellow_dark} /> : <MdStarHalf color={bgColor.bg_red_dark} />;
 
-	const fee = items.fees
-		? `${items.fees?.toLocaleString("en-NG", {
-				style: "currency",
-				currency: "NGN",
-		  })}`
-		: "---";
+	const fee =
+		items.fees && items.fees.toString().length <= 9
+			? `${items.fees?.toLocaleString("en-NG", {
+					style: "currency",
+					currency: "NGN",
+			  })}`
+			: "---";
+
+	const onClick = () => {
+		if (!items) return;
+		setDoctorInfo({ ...items, fees: fee, ratingStar: ratingStar }); //Passes the doctor's information when clicked
+		navigate("/doctor-info");
+	};
 
 	return (
-		<DoctorListWrapper>
+		<DoctorListWrapper onClick={onClick}>
 			<div className="doctor-photo">&nbsp;</div>
 
 			<div className="doctor-info-container col">

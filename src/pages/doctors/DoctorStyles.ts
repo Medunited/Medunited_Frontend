@@ -52,4 +52,22 @@ const DoctorWrapper = styled.div`
 	}
 `;
 
-export { DoctorWrapper };
+const DoctorInfoWrapper = styled.div`
+	& .container {
+		display: flex;
+
+		& .doctor-reviews {
+			background-color: ${bgColor.bg_white};
+		}
+
+		& .upcoming-appointment {
+			margin: 0 2rem;
+		}
+
+		& .doctor-details {
+			width: 220px;
+		}
+	}
+`;
+
+export { DoctorWrapper, DoctorInfoWrapper };

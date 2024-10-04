@@ -2,6 +2,7 @@
 	/* Body background-color */
 	--body-bg: rgba(240, 241, 242);
 	--text-color: rgb(77, 77, 77);
+	/* --text-color: rgb(0, 0, 0); */
 }
 
 body * {
