@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { bgColor, borderColor, fontSize, icon, textColor, transform } from "../../variables/Variables";
+import { bgColor, borderColor, icon, transform } from "../../variables/Variables";
 import { NavMenuImg } from "../../assets";
 
 const Nav = styled.nav`
