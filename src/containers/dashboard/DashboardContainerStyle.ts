@@ -136,7 +136,7 @@ const PatientChartOverviewContainer = styled.section`
 		padding: 0;
 
 		& .chart-nav-listItems {
-			color: ${textColor.text_primary_light};
+			// color: ${textColor.text_primary_light};
 			font-size: ${fontSize.font_size_big};
 			font-weight: 500;
 			cursor: pointer;
