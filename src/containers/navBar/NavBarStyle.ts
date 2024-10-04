@@ -32,7 +32,7 @@ const NavListItems = styled.li`
 	align-items: center;
 	height: 100%;
 	cursor: pointer;
-	font-size: ${fontSize.font_size_medium_1};
+	font-size: ${fontSize.font_size_small};
 
 	${transform.text_transform};
 

@@ -7,6 +7,41 @@ const Wrapper = styled.div`
 	padding: 0;
 `;
 
+const BtnSearchWrapper = styled.div`
+	display: flex;
+	align-items: center;
+
+	& .icon-search {
+		display: flex;
+		transform: translateX(3rem);
+		color: rgba(0, 0, 0, 0.3);
+		align-items: center;
+
+		& svg {
+			width: 15px;
+			height: 15px;
+			color: inherit;
+		}
+	}
+
+	& input {
+		font-size: ${fontSize.font_size_medium_1};
+		color: inherit;
+		padding: 0.7rem 1rem 0.7rem 4rem;
+		border-radius: 20px;
+		background-color: ${bgColor.bg_white};
+		border: 1px solid transparent;
+
+		&:focus {
+			border: 1px solid ${borderColor.border_color};
+		}
+
+		&::placeholder {
+			color: rgba(0, 0, 0, 0.3);
+		}
+	}
+`;
+
 const HeaderContainer = styled.div`
 	margin-top: ${marginTop.medium};
 	position: relative;
@@ -347,4 +382,4 @@ const PopUpWrapper = styled.div`
 	}
 `;
 
-export { Heading, BtnPrimaryWrapper, Wrapper, OverviewWrapper, HeaderContainer, HeadingSecondaryContainer, PaginationContainer, PopUpWrapper };
+export { Heading, BtnPrimaryWrapper, Wrapper, OverviewWrapper, HeaderContainer, HeadingSecondaryContainer, PaginationContainer, PopUpWrapper, BtnSearchWrapper };

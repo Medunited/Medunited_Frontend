@@ -1,8 +1,7 @@
-import { BtnPrimary, Header, HeadingPrimary, Pagination } from "../../components";
+import { BtnPrimary, BtnSearch, Header, HeadingPrimary, Pagination } from "../../components";
 import { MainNavBar, Main, DoctorList } from "../../containers";
 import { doctorList } from "../../hooks/useDoctorList";
 import { DoctorWrapper } from "./DoctorStyles";
-import { GoSearch } from "react-icons/go";
 import { useRef, useState } from "react";
 import { marginTop } from "../../variables/Variables";
 
@@ -12,9 +11,9 @@ const Doctors = () => {
 	const [doctorListItemsPerPage, setDoctorListItemPerPage] = useState(doctoreListPageDisplayStart);
 	const [doctorListItemOffset, setDoctorListItemOffset] = useState(0);
 
-	const [search, setSearch] = useState("");
+	const [searchDcotor, setDoctorSearch] = useState("");
 
-	const searchDoctor = search ? doctorList.filter((doctor) => doctor.name.toLowerCase().includes(search.toLowerCase())) : doctorList;
+	const searchDoctor = searchDcotor ? doctorList.filter((doctor) => doctor.name.toLowerCase().includes(searchDcotor.toLowerCase())) : doctorList;
 	// const searchDoctor = search ? doctorList.filter((doctor) => doctor.fees <= parseInt(search)) : doctorList;
 
 	const doctorListPageRef = useRef(null);
@@ -26,7 +25,7 @@ const Doctors = () => {
 		itemOffset: doctorListItemOffset,
 		ItemsPerPage: doctorListItemsPerPage,
 		endOffset: doctorListEndOffset,
-		items: search ? searchDoctor : doctorList,
+		items: searchDcotor ? searchDoctor : doctorList,
 		ref: doctorListPageRef,
 		pageDisplayStart: doctoreListPageDisplayStart,
 		setItemOffset: setDoctorListItemOffset,
@@ -46,12 +45,7 @@ const Doctors = () => {
 					<BtnPrimary>Add New</BtnPrimary>
 				</div>
 
-				<div className="search">
-					<button className="icon-search">
-						<GoSearch />
-					</button>
-					<input type="text" placeholder="Search" value={search} onChange={(e) => setSearch(e.target.value)} />
-				</div>
+				<BtnSearch searchParam={searchDcotor} setSearch={(value) => setDoctorSearch(value)} />
 			</Header>
 
 			<Main>
