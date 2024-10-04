@@ -67,7 +67,7 @@ const OverviewWrapper = styled.div`
 	}
 
 	& .overview-text {
-		color: ${textColor.text_primary_light};
+		// color: ${textColor.text_primary_light};
 		font-size: ${fontSize.font_size_medium};
 		font-weight: 500;
 	}
