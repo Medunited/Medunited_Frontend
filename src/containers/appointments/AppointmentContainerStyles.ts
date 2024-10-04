@@ -123,7 +123,7 @@ const SelectDoctorContainer = styled.section`
 			padding: 0 0 0 2rem;
 			margin: 0 0 1rem 0;
 			display: block;
-			font-weight: 500;
+			// font-weight: 500;
 		}
 
 		& .select-doctor-info {
@@ -246,7 +246,7 @@ const PatientInfoWrapper = styled.section`
 		& .heading_2 {
 			color: ${textColor.text_primary_light};
 			display: block;
-			font-weight: 500;
+			// font-weight: 500;
 		}
 
 		& .patient-details {
