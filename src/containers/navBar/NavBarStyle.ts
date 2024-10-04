@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { bgColor, borderColor, icon, transform } from "../../variables/Variables";
+import { bgColor, borderColor, fontSize, icon, transform } from "../../variables/Variables";
 import { NavMenuImg } from "../../assets";
 
 const Nav = styled.nav`
@@ -32,11 +32,12 @@ const NavListItems = styled.li`
 	align-items: center;
 	height: 100%;
 	cursor: pointer;
+	font-size: ${fontSize.font_size_medium_1};
 
 	${transform.text_transform};
 
 	&:not(:last-child) {
-		margin: 0 2.5rem 0 0;
+		margin: 0 4rem 0 0;
 	}
 
 	& svg {

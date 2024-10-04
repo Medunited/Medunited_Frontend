@@ -72,32 +72,30 @@ export const borderRadius = {
 // Transforms
 export const transform = {
 	menu_transform: `
-	 	transform: scale(0.9);
-		transition: transform 0.2s;
+	 	transform: scale(1);
+		transition: all 0.1s;
 
-		position: relative;
 
 		&:hover {
-			transform: scale(1);
+			transform: scale(.95);
 		}
 
 		&:active {
-			transform: scale(0.9);
+			transform: scale(1);
 		}
 	`,
 
 	text_transform: `
-	 	transform: scale(0.8);
-		transition: transform 0.2s;
+	 	transform: scale(1);
+		transition: all 0.1s;
 
-		position: relative;
 
 		&:hover {
-			transform: scale(0.9);
+			transform: scale(0.95);
 		}
 
 		&:active {
-			transform: scale(0.8);
+			transform: scale(1);
 		}
 	`,
 };
