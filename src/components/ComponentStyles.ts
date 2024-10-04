@@ -97,6 +97,7 @@ const OverviewWrapper = styled.div`
 		& .overview-count {
 			font-size: 3.5rem;
 			font-weight: 550;
+			color: ${textColor.text_primary_light_1};
 		}
 	}
 `;
