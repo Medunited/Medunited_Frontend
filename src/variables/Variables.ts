@@ -2,7 +2,8 @@
 export const textColor = {
 	text_primary_color: "rgb(77, 77, 77)",
 	// text_primary_color: "rgb(38,38,38)",
-	text_primary_light: "rgb(77, 77, 77)",
+	// text_primary_light: "rgb(77, 77, 77)",
+	text_primary_light: "rgb(132, 135, 146)",
 	text_white: "#fff",
 	text_dark: "#000",
 	text_secondary_color: "rgb(30,196,245)",
