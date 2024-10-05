@@ -4,6 +4,7 @@ import { DoctorProps } from "../containers/doctors/DoctorList";
 type Search = {
 	doctorName: string;
 	patientName: string;
+	patient: string;
 };
 
 interface DoctorInfoProps {
@@ -31,6 +32,7 @@ const useDoctorInfoStateManagement = create<DoctorInfoProps>((set) => ({
 	searchParam: {
 		doctorName: "",
 		patientName: "",
+		patient: "",
 	},
 
 	setSearchParam: (searchName, searchValue) => set((store) => ({ searchParam: { ...store.searchParam, [searchName]: searchValue } })),

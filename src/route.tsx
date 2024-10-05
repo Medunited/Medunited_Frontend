@@ -15,6 +15,7 @@ const route = createBrowserRouter([
 			{ path: "/add-appointment", element: <Pages.AddAppointment /> },
 			{ path: "/doctors", element: <Pages.Doctors /> },
 			{ path: "/doctor-info", element: <Pages.DoctorInfo /> },
+			{ path: "/patients", element: <Pages.Patients /> },
 		],
 	},
 

@@ -5,7 +5,7 @@ import { FaUserDoctor, FaPersonWalking } from "react-icons/fa6";
 import { MdPhoneIphone } from "react-icons/md";
 
 const overviewDetails = [
-	{ text: "Admitted patients", icon: <BsPersonFillAdd />, count: 629, bgColor: bgColor.bg_green, page: "" },
+	{ text: "Admitted patients", icon: <BsPersonFillAdd />, count: 629, bgColor: bgColor.bg_green, page: "/patients" },
 	{ text: "Appointments", icon: <FaUserNurse />, count: 68, bgColor: bgColor.bg_yellow_dark, page: "/appointments" },
 	{ text: "Rooms Occupied", icon: <FaBed />, count: 64 + "%", bgColor: bgColor.bg_secondary_color, page: "" },
 	{ text: "Total Revenue", icon: <FaUserDoctor />, count: 18, bgColor: bgColor.bg_red_dark, page: "" },
