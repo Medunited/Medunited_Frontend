@@ -74,18 +74,17 @@ const DoctorInformationWrapper = styled.section`
 	& .section_2 {
 		background-color: ${bgColor.bg_white};
 		border-radius: 3px;
-		// border: 1px solid ${borderColor.border_color};
 	}
 
 	& .heading_small {
 		display: block;
-		color: ${textColor.text_primary_light};
-		font-size: ${fontSize.font_size_tiny};
+		font-weight: 500;
+		font-size: ${fontSize.font_size_small};
+		margin: 0 0 0.4rem 0;
 	}
 
 	& .heading_medium {
-		font-weight: 500;
-		font-size: ${fontSize.font_size_small};
+		font-size: ${fontSize.font_size_tiny};
 		display: block;
 	}
 
@@ -125,13 +124,13 @@ const DoctorInformationWrapper = styled.section`
 
 			& .doctor_name {
 				display: block;
-				font-size: ${fontSize.font_size_medium_1};
-				font-weight: 500;
+				font-size: ${fontSize.font_size_medium};
+				font-weight: 550;
 			}
 
 			& .doctor_department {
-				font-size: ${fontSize.font_size_small};
-				color: ${textColor.text_primary_light};
+				font-size: ${fontSize.font_size_tiny};
+				// color: ${textColor.text_primary_light};
 			}
 		}
 

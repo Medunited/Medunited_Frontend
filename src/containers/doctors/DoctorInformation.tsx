@@ -38,6 +38,7 @@ const DoctorInformation = () => {
 					</div>
 				</div>
 			</div>
+
 			<div className="section_2">
 				<div className="d-flex">
 					<div className="col-5">

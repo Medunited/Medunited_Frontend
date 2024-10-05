@@ -3,7 +3,8 @@ import { bgColor } from "../../variables/Variables";
 import { DoctorReviewWrapper } from "./DoctorContainerStyle";
 
 const DoctorReviews = () => {
-	const reviewList = [1, 2, 3];
+	const reviewList = [1, 2, 3]; //Change with real reviews
+
 	return (
 		<DoctorReviewWrapper>
 			<h2 className="heading">Recent Reviews</h2>
@@ -13,6 +14,7 @@ const DoctorReviews = () => {
 					<div key={item} className="reviews">
 						<div className="reviewer">
 							<div className="reviewer-photo"></div>
+
 							<div className="reviewer-details">
 								<span className="reviewer-name">Ronny George</span>
 
