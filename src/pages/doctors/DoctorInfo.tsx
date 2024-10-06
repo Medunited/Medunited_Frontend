@@ -20,7 +20,7 @@ const DoctorInfo = () => {
 				<div className="d-flex align-items-center">
 					<HeadingPrimary>Doctors </HeadingPrimary>
 
-					<div className="d-flex align-items-center" style={{ margin: "0 0 0 1rem", color: textColor.text_primary_light, fontSize: fontSize.font_size_medium_1 }}>
+					<div className="d-flex align-items-center" style={{ margin: "0 0 0 1rem", color: textColor.text_primary_light, fontSize: fontSize.font_size_medium }}>
 						<PiGreaterThanLight size={12} />
 
 						<span className="ms-2 ">Doctor info</span>

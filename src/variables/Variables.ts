@@ -1,9 +1,7 @@
 // Text Color
 export const textColor = {
-	// text_primary_color: "rgb(77, 77, 77)",
-	text_primary_color: "rgb(38,38,38)",
-	text_primary_light_1: "rgb(77, 77, 77)",
-	text_primary_light: "rgb(132, 135, 146)",
+	// text_primary_light: "rgb(132, 135, 146)",
+	text_primary_light: "rgb(89,89,89)",
 	text_white: "#fff",
 	text_dark: "#000",
 	text_secondary_color: "rgb(30,196,245)",
@@ -43,8 +41,7 @@ export const borderColor = {
 // Font Sizes
 export const fontSize = {
 	font_size_big: "1.7rem",
-	font_size_medium: "1.25rem",
-	font_size_medium_1: "1.4rem",
+	font_size_medium: "1.3rem",
 	font_size_small: "1.17rem",
 	font_size_tiny: "1.09rem",
 };

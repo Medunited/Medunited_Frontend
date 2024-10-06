@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { LoginImg } from "../assets";
-import { bgColor, borderColor, fontSize, textColor } from "../variables/Variables";
+import { bgColor, borderColor, fontSize, textColor, transform } from "../variables/Variables";
 
 const SigninWrapper = styled.div`
 	width: 100vw;
@@ -9,7 +9,6 @@ const SigninWrapper = styled.div`
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center;
-	color: ${textColor.text_primary_color};
 
 	& .loginWrapper {
 		display: flex;
@@ -37,18 +36,12 @@ const SigninContainer = styled.div`
 				text-align: right;
 				font-size: ${fontSize.font_size_medium};
 
-				& a {
-					text-decoration: none;
-					color: ${textColor.text_primary_color};
-					transition: all 0.2s;
+				& button {
+					color: inherit;
+					${transform.menu_transform};
 
 					&:hover {
-						color: ${textColor.text_dark};
 						text-decoration: underline;
-					}
-
-					&:active {
-						color: ${textColor.text_primary_color};
 					}
 				}
 			}

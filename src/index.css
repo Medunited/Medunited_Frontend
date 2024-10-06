@@ -2,8 +2,9 @@
 	/* Body background-color */
 	--body-bg: rgba(240, 241, 242);
 	/* --body-bg: rgba(38, 38, 38); */
-	/* --text-color: rgb(77, 77, 77); */
-	--text-color: rgb(38, 38, 38);
+	--text-color: rgb(0, 0, 0);
+	/* --text-color: rgb(38, 38, 38); */
+	/* --text-color: rgb(89, 89, 89); */
 }
 
 body * {
@@ -24,6 +25,7 @@ body {
 	font-size: 1.5rem;
 	box-sizing: border-box;
 	font-family: "Poppins", sans-serif;
+	/* font-family: "Open Sans", sans-serif; */
 	background-color: var(--body-bg);
 	color: var(--text-color);
 	user-select: none;

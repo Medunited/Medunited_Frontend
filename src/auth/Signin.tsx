@@ -2,7 +2,7 @@ import { FormEvent } from "react";
 import { BtnPrimary } from "../components";
 import * as SigninStyle from "./SigninStyles";
 import { useLogin } from "../stateManagement";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Signin = () => {
 	const { loginData, setLogin } = useLogin();
@@ -46,7 +46,7 @@ const Signin = () => {
 							</SigninStyle.SiginInputWrapper>
 
 							<div className="forget-password">
-								<Link to="">Forget password</Link>
+								<button onClick={() => alert("Not yet Implemented")}>Forget password</button>
 							</div>
 
 							<SigninStyle.SiginBtnWrapper>

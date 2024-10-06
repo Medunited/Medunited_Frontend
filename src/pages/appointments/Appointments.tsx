@@ -37,7 +37,7 @@ const Appointments = () => {
 
 				<div onClick={() => navigate("/add-appointment")}>
 					<BtnPrimary>
-						<div className="d-flex">
+						<div className="d-flex align-items-center">
 							<FiPlus color="inherit" size={20} />
 							<span className="ms-2">Add Appointment</span>
 						</div>

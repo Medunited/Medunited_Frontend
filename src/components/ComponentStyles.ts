@@ -25,7 +25,7 @@ const BtnSearchWrapper = styled.div`
 	}
 
 	& input {
-		font-size: ${fontSize.font_size_medium_1};
+		font-size: ${fontSize.font_size_medium};
 		color: inherit;
 		padding: 0.7rem 1rem 0.7rem 4rem;
 		border-radius: 20px;
@@ -76,7 +76,7 @@ const BtnPrimaryWrapper = styled.button`
 	color: ${textColor.text_white};
 	border-radius: 30px;
 	transition: all 0.2s;
-	font-size: ${fontSize.font_size_medium_1};
+	font-size: ${fontSize.font_size_medium};
 	${transform.menu_transform};
 
 	&:hover,
@@ -132,7 +132,7 @@ const OverviewWrapper = styled.div`
 		& .overview-count {
 			font-size: 3.5rem;
 			font-weight: 550;
-			color: ${textColor.text_primary_light_1};
+			color: ${textColor.text_primary_light};
 		}
 	}
 `;
@@ -215,7 +215,7 @@ const PaginationContainer = styled.div`
 			border: 1px solid ${borderColor.border_color};
 			margin: 0 0.1rem 0 0;
 			border-radius: 3px;
-			font-size: ${fontSize.font_size_medium_1};
+			font-size: ${fontSize.font_size_medium};
 			${transform.menu_transform};
 
 			&:hover {

@@ -114,7 +114,7 @@ const SelectDoctorContainer = styled.section`
 		padding: 2rem 4rem;
 
 		& .heading_1 {
-			font-size: ${fontSize.font_size_medium_1};
+			font-size: ${fontSize.font_size_medium};
 			font-weight: 500;
 		}
 
@@ -239,7 +239,7 @@ const PatientInfoWrapper = styled.section`
 		font-size: ${fontSize.font_size_small};
 
 		& .heading_1 {
-			font-size: ${fontSize.font_size_medium_1};
+			font-size: ${fontSize.font_size_medium};
 			font-weight: 500;
 		}
 

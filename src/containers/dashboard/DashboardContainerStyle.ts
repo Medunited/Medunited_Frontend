@@ -83,7 +83,7 @@ const PatientAppointmentContainer = styled.section`
 				margin: 0 0 0 5rem;
 
 				& .patients-visit-type {
-					font-size: ${fontSize.font_size_medium_1};
+					font-size: ${fontSize.font_size_medium};
 				}
 			}
 
@@ -228,7 +228,7 @@ const TodayAppointmentContainer = styled.section`
 
 				& .patient-details {
 					& .patient-name {
-						font-size: ${fontSize.font_size_medium_1};
+						font-size: ${fontSize.font_size_medium};
 						font-weight: 550;
 					}
 
@@ -302,7 +302,7 @@ const PatientReviewContainer = styled.section`
 					background-color: ${bgColor.bg_dark};
 					padding: 0.7rem 1.5rem;
 					border-radius: 5px;
-					font-size: ${fontSize.font_size_medium_1};
+					font-size: ${fontSize.font_size_medium};
 				}
 
 				&:hover {
@@ -481,7 +481,7 @@ const DoctorAvailabilityContainer = styled.section`
 
 				& .doctor-details {
 					& .doctor-name {
-						font-size: ${fontSize.font_size_medium_1};
+						font-size: ${fontSize.font_size_medium};
 						font-weight: 550;
 					}
 
