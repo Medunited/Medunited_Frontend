@@ -23,16 +23,16 @@ const DoctorInformation = () => {
 
 				<div className="doctor_fee_review">
 					<div className="doctor_fees">
-						<span className="heading_small fees">Fees</span>
-						<div className="heading_medium amount_charged">{doctorInfo.fees}</div>
+						<span className="heading_1 fees">Fees</span>
+						<div className="heading_2 amount_charged">{doctorInfo.fees}</div>
 					</div>
 
 					<div>
-						<span className="heading_small feedbacks">Feedbacks</span>
+						<span className="heading_1 feedbacks">Feedbacks</span>
 
 						<div className="reviews">
 							<div className="d-flex align-items-center">{doctorInfo.ratingStar}</div>
-							<span className="heading_medium rating">{doctorInfo.rating}</span>
+							<span className="heading_2 rating">{doctorInfo.rating}</span>
 							<span className="number_of_review">({doctorInfo.reviews_number})</span>
 						</div>
 					</div>
@@ -42,23 +42,23 @@ const DoctorInformation = () => {
 			<div className="section_2">
 				<div className="d-flex">
 					<div className="col-5">
-						<span className="heading_small">Experience</span>
-						<span className="heading_medium">{doctorInfo.yearsOfExperience}</span>
+						<span className="heading_1">Experience</span>
+						<span className="heading_2">{doctorInfo.yearsOfExperience}</span>
 					</div>
 
 					<div className="col">
-						<span className="heading_small">Availability</span>
-						<span className="heading_medium">
+						<span className="heading_1">Availability</span>
+						<span className="heading_2">
 							{doctorInfo.availabilityStart} &ndash; {doctorInfo.availabilityEnd}
 						</span>
 					</div>
 				</div>
 
 				<div className="doctor_services">
-					<span className="heading_small">Services</span>
+					<span className="heading_1">Services</span>
 					<div>
 						{doctorInfo.services.map((services) => (
-							<span key={services} className="heading_medium">
+							<span key={services} className="heading_2">
 								{services}
 							</span>
 						))}

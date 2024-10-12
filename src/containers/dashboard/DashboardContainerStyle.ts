@@ -172,7 +172,6 @@ const TodayAppointmentContainer = styled.section`
 		padding: 2.5rem 3rem 0 3rem;
 
 		& .see-all {
-			font-size: ${fontSize.font_size_big};
 			color: ${textColor.text_secondary_color_light};
 			font-weight: 500;
 			${transform};
@@ -229,7 +228,7 @@ const TodayAppointmentContainer = styled.section`
 				& .patient-details {
 					& .patient-name {
 						font-size: ${fontSize.font_size_medium};
-						font-weight: 550;
+						font-weight: 500;
 					}
 
 					& .patient-scheduled-doctor {
@@ -249,7 +248,7 @@ const TodayAppointmentContainer = styled.section`
 			}
 
 			& .appointment-time {
-				font-weight: 550;
+				font-weight: 500;
 				font-size: ${fontSize.font_size_medium};
 			}
 		}
@@ -427,7 +426,6 @@ const DoctorAvailabilityContainer = styled.section`
 		padding: 2.5rem 3rem 0rem 3rem;
 
 		& .see-all {
-			font-size: ${fontSize.font_size_big};
 			color: ${textColor.text_secondary_color_light};
 			font-weight: 500;
 			${transform};
@@ -482,21 +480,21 @@ const DoctorAvailabilityContainer = styled.section`
 				& .doctor-details {
 					& .doctor-name {
 						font-size: ${fontSize.font_size_medium};
-						font-weight: 550;
+						font-weight: 500;
 					}
 
 					& .doctor-profession {
 						color: ${textColor.text_primary_light};
 						font-weight: 500;
-						font-size: ${fontSize.font_size_medium};
+						font-size: ${fontSize.font_size_small};
 						margin: 1rem 0 0 0;
 					}
 				}
 			}
 
 			& .doctor-availability {
-				font-weight: 550;
-				font-size: ${fontSize.font_size_medium};
+				font-weight: 500;
+				font-size: ${fontSize.font_size_small};
 			}
 		}
 	}

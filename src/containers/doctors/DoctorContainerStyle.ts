@@ -28,7 +28,7 @@ const DoctorListWrapper = styled.div`
 
 			& .doctor-department {
 				color: ${textColor.text_secondary_color_light};
-				font-size: ${fontSize.font_size_tiny};
+				font-size: ${fontSize.font_size_small};
 				font-weight: 500;
 			}
 
@@ -76,15 +76,14 @@ const DoctorInformationWrapper = styled.section`
 		border-radius: 3px;
 	}
 
-	& .heading_small {
-		display: block;
+	& .heading_1 {
 		font-weight: 500;
-		font-size: ${fontSize.font_size_small};
 		margin: 0 0 0.4rem 0;
 	}
 
-	& .heading_medium {
-		font-size: ${fontSize.font_size_tiny};
+	& .heading_1,
+	& .heading_2 {
+		font-size: ${fontSize.font_size_small};
 		display: block;
 	}
 
@@ -129,7 +128,7 @@ const DoctorInformationWrapper = styled.section`
 			}
 
 			& .doctor_department {
-				font-size: ${fontSize.font_size_tiny};
+				font-size: ${fontSize.font_size_small};
 				// color: ${textColor.text_primary_light};
 			}
 		}
@@ -168,7 +167,7 @@ const DoctorInformationWrapper = styled.section`
 		margin: 0.5rem 0 0 0;
 		padding: 1.5rem 1.5rem;
 
-		& .heading_medium {
+		& .heading_2 {
 			margin: 0 0 0.7rem 0;
 		}
 
@@ -292,17 +291,20 @@ const DoctorAppointmentWrapper = styled.section`
 					& .sub-heading {
 						display: block;
 					}
-
-					& .sub-heading_1,
-					& .status {
+					& .sub-heading_1 {
 						font-size: ${fontSize.font_size_medium};
 						font-weight: 500;
 					}
 
+					& .status {
+						font-size: ${fontSize.font_size_small};
+						font-weight: 500;
+					}
+
 					& .sub-heading_2 {
-						font-size: ${fontSize.font_size_tiny};
+						font-size: ${fontSize.font_size_small};
 						color: ${textColor.text_primary_light};
-						margin: 0.3rem 0 0 0;
+						margin: 0.2rem 0 0 0;
 					}
 				}
 			}

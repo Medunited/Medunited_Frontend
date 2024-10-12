@@ -49,6 +49,10 @@ const HeaderContainer = styled.div`
 	display: flex;
 	align-items: center;
 
+	& h1 {
+		font-size: ${fontSize.font_size_extra_big};
+	}
+
 	&::before {
 		content: "";
 		display: block;

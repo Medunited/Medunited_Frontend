@@ -40,8 +40,9 @@ export const borderColor = {
 
 // Font Sizes
 export const fontSize = {
-	font_size_big: "1.7rem",
-	font_size_medium: "1.3rem",
+	font_size_extra_big: "2.5rem",
+	font_size_big: "1.9rem",
+	font_size_medium: "1.35rem",
 	font_size_small: "1.17rem",
 	font_size_tiny: "1.09rem",
 };
