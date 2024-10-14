@@ -8,7 +8,7 @@ import { marginTop } from "../../variables/Variables";
 const Patients = () => {
 	const { searchParam } = useDoctorInfoStateManagement();
 
-	const patientListPageDisplayStart = 12;
+	const patientListPageDisplayStart = 9;
 	const [patientItemsPerPage, setPatientItemPerPage] = useState(patientListPageDisplayStart);
 	const [patientItemOffset, setPatientItemOffset] = useState(0);
 

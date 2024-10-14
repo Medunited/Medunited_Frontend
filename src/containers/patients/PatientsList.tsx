@@ -1,6 +1,7 @@
 import { IoMdMore } from "react-icons/io";
 import { HeadingSecondary } from "../../components";
 import { PatientListWrapper } from "./PatientStyle";
+import { textColor } from "../../variables/Variables";
 
 type PatientList = {
 	name: string;
@@ -60,7 +61,7 @@ const Patients = ({ patientListItems }: PatientProps) => {
 								<span>{item.email_address}</span>
 							</div>
 							<div className="col">
-								<span>{item.status}</span>
+								<span style={{ color: item.status.includes("Consulted") ? textColor.text_secondary_color : item.status.includes("Admitted") ? textColor.text_green : textColor.text_primary_light }}>{item.status}</span>
 							</div>
 							<div className="col">
 								<span>{item.visited_for}</span>

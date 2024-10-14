@@ -10,6 +10,10 @@ const PatientListWrapper = styled.section`
 		display: flex;
 		padding: 1.1rem 1rem 1.1rem 4rem;
 		border-bottom: 1px solid ${bgColor.bg_secondary_color};
+
+		& .col:not(:last-child) {
+			margin: 0 1rem 0 0;
+		}
 	}
 
 	& .patient-info-wrapper {
@@ -20,7 +24,7 @@ const PatientListWrapper = styled.section`
 			display: flex;
 			align-items: center;
 
-			padding: 1.1rem 1rem 1.1rem 4rem;
+			padding: 0.7rem 1rem 0.7rem 4rem;
 
 			& .col {
 				word-wrap: break-word;
