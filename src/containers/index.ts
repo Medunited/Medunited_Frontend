@@ -11,6 +11,7 @@ export { default as AppointmentLists } from "./appointments/AppointmentLists";
 export { default as SelectDoctor } from "./appointments/SelectDoctor";
 export { default as PatientInfo } from "./appointments/PatientInfo";
 export { default as PatientsList } from "./patients/PatientsList";
+export { default as AddNewPatient } from "./patients/AddNewPatient";
 export { default as DoctorList } from "./doctors/DoctorList";
 export { default as DoctorInformation } from "./doctors/DoctorInformation";
 export { default as DoctorReviews } from "./doctors/DoctorReviews";

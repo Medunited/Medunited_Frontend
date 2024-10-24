@@ -1,6 +1,6 @@
 import { useState, useRef } from "react";
 import { Header, HeadingPrimary, BtnPrimary, BtnSearch, Pagination } from "../../components";
-import { MainNavBar, Main, PatientsList } from "../../containers";
+import { MainNavBar, Main, PatientsList, AddNewPatient } from "../../containers";
 import { patientList } from "../../hooks/usePatient";
 import useDoctorInfoStateManagement from "../../stateManagement/useDoctorInfoStateManagement";
 import { marginTop } from "../../variables/Variables";
@@ -31,6 +31,13 @@ const Patients = () => {
 		setItemPerPage: setPatientItemPerPage,
 	};
 
+	const [addNewPatientState, setAddNewPatient] = useState(false);
+
+	const addNewPatientRef = useRef(null);
+
+	const handleAddNewPatientOn = () => setAddNewPatient(true);
+	const handleAddNewPatientOff = () => setAddNewPatient(false);
+
 	return (
 		<div>
 			<MainNavBar />
@@ -41,7 +48,9 @@ const Patients = () => {
 						<HeadingPrimary>Patients</HeadingPrimary>
 					</div>
 
-					<BtnPrimary>Add New</BtnPrimary>
+					<div onClick={handleAddNewPatientOn}>
+						<BtnPrimary>Add New</BtnPrimary>
+					</div>
 				</div>
 
 				<BtnSearch searchParam={searchParam.patient} searchName="patient" />
@@ -54,6 +63,12 @@ const Patients = () => {
 					{patientDetails.length > 0 && (
 						<div style={{ margin: `${marginTop.medium} 0 0 0` }}>
 							<Pagination paginationParams={patientParams} />
+						</div>
+					)}
+
+					{addNewPatientState && (
+						<div ref={addNewPatientRef}>
+							<AddNewPatient onClose={handleAddNewPatientOff} />
 						</div>
 					)}
 				</div>
